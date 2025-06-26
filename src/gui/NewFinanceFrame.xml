@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer" />
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg" />
+    <GuiElement profile="dialogBg" id="dialogElement" size="900px 800px">
+        <ThreePartBitmap profile="fs25_dialogBgMiddle" />
+        <ThreePartBitmap profile="fs25_dialogBgTop" />
+        <ThreePartBitmap profile="fs25_dialogBgBottom" />
+        <GuiElement profile="fs25_dialogContentContainer">
+            <Animation profile="fs25_dialogLoading" id="iconLoadingElement" />
+
+            <Text profile="fs25_dialogTitle" id="dialogTitleElement" position="0px -40px" text="$l10n_fl_new_finance_title"/>
+
+            <Text profile="fs25_dialogText" id="dialogTextElement" position="0px -120px" text="$l10n_fl_choose_deposit"/>
+            <MultiTextOption profile="fl_multiTextOption_TC" id="depositOption" position="0px -150px" focusInit="onOpen" onClick="onClickDepositLevel" />
+
+            <Text profile="fs25_dialogText" id="dialogTextElement" position="0px -220px" text="$l10n_fl_choose_duration"/>
+            <MultiTextOption profile="fl_multiTextOption_TC" id="durationOption" position="0px -260px" onClick="onClickDuration" />
+
+            <GuiElement position="-175px -200px">
+                <GuiElement position="0px 0px">
+                    <Text profile="fl_dialogText_TL" id="dialogTextElement" text="$l10n_fl_option_one"/>
+                </GuiElement>
+                <GuiElement position="200px 0px">
+                    <Text profile="fl_dialogText_TL" id="dialogTextElement" text="$l10n_fl_option_two"/>
+                </GuiElement>
+                <GuiElement position="400px 0px">
+                    <Text profile="fl_dialogText_TL" id="dialogTextElement" text="$l10n_fl_option_three"/>
+                </GuiElement>
+                <GuiElement position="600px 0px">
+                    <Text profile="fl_dialogText_TL" id="dialogTextElement" text="$l10n_fl_option_four"/>
+                </GuiElement>
+            </GuiElement>
+            
+
+        </GuiElement>
+        <BoxLayout profile="fs25_dialogButtonBox">
+            <Button profile="buttonBack" text="$l10n_button_close" onClick="onClickBack" />
+            <Button profile="buttonOK" text="$l10n_ui_purchase" onClick="onClickPurchase" />
+        </BoxLayout>
+    </GuiElement>
+</GUI>

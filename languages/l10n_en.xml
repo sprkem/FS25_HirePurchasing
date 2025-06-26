@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<translationContributors/>
+	<texts>
+		<text name="fl_btn_finance" text="FINANCE"/>
+		<text name="fl_new_finance_title" text="New lease deal"/>
+		<text name="fl_choose_deposit" text="Choose an amount to deposit"/>
+		<text name="fl_choose_duration" text="Choose the lease length in years"/>
+		<text name="fl_option_one" text="Option one"/>
+		<text name="fl_option_two" text="Option two"/>
+		<text name="fl_option_three" text="Option three"/>
+		<text name="fl_option_four" text="Option four"/>
+	</texts>
+</l10n>

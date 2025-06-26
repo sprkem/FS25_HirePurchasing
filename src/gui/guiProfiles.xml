@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUIProfiles>
+    <Profile name="fl_multiTextOption_TL" extends="fs25_multiTextOption" with="anchorTopLeft" />
+    <Profile name="fl_multiTextOption_TC" extends="fs25_multiTextOption" with="anchorTopCenter" />
+    <Profile name="fl_dialogText_TL" extends="fs25_dialogText" with="anchorTopLeft" />
+</GUIProfiles>
