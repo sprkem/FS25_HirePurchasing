@@ -10,5 +10,9 @@
 		<text name="fl_option_two" text="Option two"/>
 		<text name="fl_option_three" text="Option three"/>
 		<text name="fl_option_four" text="Option four"/>
+		<text name="fl_header_monthly" text="Monthly cost"/>
+		<text name="fl_header_final_fee" text="Final fee"/>
+		<text name="fl_header_total_cost" text="Total cost"/>
+		<text name="fl_choose_option" text="Choose which deal to lease with"/>
 	</texts>
 </l10n>

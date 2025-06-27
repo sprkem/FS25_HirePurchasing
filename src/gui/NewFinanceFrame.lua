@@ -86,6 +86,27 @@ end
 
 function NewFinanceFrame:updateView()
     self:refreshOfferings()
+
+    local offerOne = self.offerings[1]
+    local offerTwo = self.offerings[2]
+    local offerThree = self.offerings[3]
+    local offerFour = self.offerings[4]
+
+    self.offerOneMonthly:setText(g_i18n:formatMoney(offerOne.monthlyPayment))
+    self.offerOneFinal:setText(g_i18n:formatMoney(offerOne.residualValue))
+    self.offerOneTotal:setText(g_i18n:formatMoney(offerOne.totalPurchaseCost))
+
+    self.offerTwoMonthly:setText(g_i18n:formatMoney(offerTwo.monthlyPayment))
+    self.offerTwoFinal:setText(g_i18n:formatMoney(offerTwo.residualValue))
+    self.offerTwoTotal:setText(g_i18n:formatMoney(offerTwo.totalPurchaseCost))
+
+    self.offerThreeMonthly:setText(g_i18n:formatMoney(offerThree.monthlyPayment))
+    self.offerThreeFinal:setText(g_i18n:formatMoney(offerThree.residualValue))
+    self.offerThreeTotal:setText(g_i18n:formatMoney(offerThree.totalPurchaseCost))
+
+    self.offerFourMonthly:setText(g_i18n:formatMoney(offerFour.monthlyPayment))
+    self.offerFourFinal:setText(g_i18n:formatMoney(offerFour.residualValue))
+    self.offerFourTotal:setText(g_i18n:formatMoney(offerFour.totalPurchaseCost))
 end
 
 function NewFinanceFrame:refreshOfferings()
@@ -102,4 +123,8 @@ end
 function NewFinanceFrame:onClickDuration(state)
     self.durationMonths = state * 12
     self:updateView()
+end
+
+function NewFinanceFrame:onClickOfferSelection(state)
+    print(state)
 end

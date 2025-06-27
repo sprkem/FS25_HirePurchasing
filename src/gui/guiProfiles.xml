@@ -3,4 +3,16 @@
     <Profile name="fl_multiTextOption_TL" extends="fs25_multiTextOption" with="anchorTopLeft" />
     <Profile name="fl_multiTextOption_TC" extends="fs25_multiTextOption" with="anchorTopCenter" />
     <Profile name="fl_dialogText_TL" extends="fs25_dialogText" with="anchorTopLeft" />
+    <Profile name="fl_dialogText_Option_Title" extends="fl_dialogText_TL">
+        <textSize value="20px" />
+        <textColor value="$preset_fs25_colorGreen" />
+    </Profile>
+    <Profile name="fl_dialogText_Header" extends="fl_dialogText_TL">
+        <textSize value="16px" />                
+        <textColor value="$preset_fs25_colorMainLight" />
+    </Profile>
+    <Profile name="fl_dialogText_Option_Value" extends="fl_dialogText_TL">
+        <textSize value="12px" />        
+        <textColor value="$preset_fs25_colorGreen" />        
+    </Profile>
 </GUIProfiles>
