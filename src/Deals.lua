@@ -5,11 +5,22 @@ Deals = {}
 
 function Deals:calculateLeaseAgreement(durationMonths, deposit, baseCost, remainingValuePercent)
     -- Set target residual value to a percentage of base cost
-    local residualValue = baseCost * remainingValuePercent
+    local finalFee = baseCost * remainingValuePercent
     -- Amount to finance (baseCost minus deposit)
     local amountFinanced = baseCost - deposit
     local depositRatio = deposit / baseCost
     local interestRate
+
+    if depositRatio <= 0.11 then
+        interestRate = 0.04
+    elseif depositRatio <= 0.21 then
+        interestRate = 0.035
+    elseif depositRatio <= 0.31 then
+        interestRate = 0.0295
+    else
+        interestRate = 0.025
+    end
+
     if depositRatio >= 0.5 then
         interestRate = 0.02 -- 2% annual
     elseif depositRatio >= 0.2 then
@@ -25,17 +36,17 @@ function Deals:calculateLeaseAgreement(durationMonths, deposit, baseCost, remain
     local monthlyPayment
     if monthlyInterest > 0 then
         local pv = amountFinanced
-        local fv = residualValue
+        local fv = finalFee
         local n = durationMonths
         local r = monthlyInterest
         monthlyPayment = (pv - fv / ((1 + r) ^ n)) * (r * (1 + r) ^ n) / ((1 + r) ^ n - 1)
     end
 
-    local totalPurchaseCost = deposit + (monthlyPayment * durationMonths) + residualValue
+    local totalPurchaseCost = deposit + (monthlyPayment * durationMonths) + finalFee
 
     -- Calculate total interest paid over the lease term
     local totalPayments = monthlyPayment * durationMonths
-    local totalInterest = totalPayments - (amountFinanced - residualValue)
+    local totalInterest = totalPayments - (amountFinanced - finalFee)
 
     -- Calculate earned equity (deposit + principal paid)
     local principalPaid = totalPayments - totalInterest
@@ -43,17 +54,17 @@ function Deals:calculateLeaseAgreement(durationMonths, deposit, baseCost, remain
     local equityEarned = deposit + principalPaid
 
     -- Define end-of-lease options
-    local endOptions = {
-        purchase = {
-            purchasePrice = residualValue
-        },
-        returnItem = {
-            fee = 0 -- No fee for returning
-        },
-        renew = {
-            equityTransferred = equityEarned * (1 - 0.05 * math.floor(durationMonths / 12))
-        }
-    }
+    -- local endOptions = {
+    --     purchase = {
+    --         purchasePrice = residualValue
+    --     },
+    --     returnItem = {
+    --         fee = 0 -- No fee for returning
+    --     },
+    --     renew = {
+    --         equityTransferred = equityEarned * (1 - 0.05 * math.floor(durationMonths / 12))
+    --     }
+    -- }
 
     -- Lease agreement details
     local leaseAgreement = {
@@ -62,10 +73,10 @@ function Deals:calculateLeaseAgreement(durationMonths, deposit, baseCost, remain
         baseCost = baseCost,
         interestRate = interestRate,
         monthlyPayment = monthlyPayment,
-        residualValue = residualValue,
         totalPurchaseCost = totalPurchaseCost,
-        endOfLeaseOptions = endOptions,
-        theoreticalEquity = equityEarned,
+        finalFee = finalFee,
+        -- endOfLeaseOptions = endOptions,
+        equity = equityEarned * (1 - 0.05 * math.floor(durationMonths / 12)),
     }
 
     return leaseAgreement
@@ -94,10 +105,3 @@ function Deals:printLeaseAgreement(agreement)
     print("Equity Earned:", string.format("%.2f", agreement.endOfLeaseOptions.renew.equityTransferred or 0))
 end
 
--- local agreement = getLeaseAgreementOptions(48, 30000, 95000)
--- for _, ag in ipairs(agreement) do
---     printLeaseAgreement(ag)
--- end
--- printLeaseAgreement(agreement)
--- local agreement = calculateLeaseAgreement(72, 35000, 150000)
--- printLeaseAgreement(agreement)

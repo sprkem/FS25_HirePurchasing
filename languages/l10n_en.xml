@@ -13,6 +13,7 @@
 		<text name="fl_header_monthly" text="Monthly cost"/>
 		<text name="fl_header_final_fee" text="Final fee"/>
 		<text name="fl_header_total_cost" text="Total cost"/>
-		<text name="fl_choose_option" text="Choose which deal to lease with"/>
+		<text name="fl_choose_option" text="Choose which option to lease with"/>
+		<text name="fl_not_enough_money" text="You need at least %s deposit to lease this item."/>
 	</texts>
 </l10n>

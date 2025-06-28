@@ -27,8 +27,8 @@ ShopConfigScreen.setStoreItem = Utils.overwrittenFunction(ShopConfigScreen.setSt
                 print("onClickFinance called")
                 local dialog = g_gui:showDialog("newFinanceFrame")
                 if dialog ~= nil then
-                    dialog.target:setData(self, storeItem)
-                end                
+                    dialog.target:setData(self, storeItem, self.configurations)
+                end
             end
 
             financeButton.onClickCallback = self.onClickFinance
