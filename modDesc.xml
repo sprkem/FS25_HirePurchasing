@@ -2,27 +2,27 @@
 <modDesc descVersion="98">
     <author>Ozz</author>
     <version>1.0.0.0</version>
-    <iconFilename>icon_financeLeasing.dds</iconFilename>
+    <iconFilename>icon_LeasingOptions.dds</iconFilename>
     <title>
-        <en>Finance Leasing</en>
+        <en>Leasing Options</en>
     </title>
     <description>
-            <en><![CDATA[Garage Menu
+            <en><![CDATA[Leasing Options
 
 A mod that adds realistic leasing models to the game.
 ]]></en>		
-    <de><![CDATA[Garage Menu
+    <de><![CDATA[Leasing Options
 
 Ein Mod, der realistische Leasing-Modelle zum Spiel hinzufügt.
 ]]></de>	
-    <fr><![CDATA[Garage Menu
+    <fr><![CDATA[Leasing Options
 
 Un mod qui ajoute des modèles de leasing réalistes au jeu.
 ]]></fr>	
     </description>
 	<extraSourceFiles>
         <sourceFile filename="src/Deals.lua"/>
-        <sourceFile filename="src/FinanceLeasing.lua"/>
+        <sourceFile filename="src/LeasingOptions.lua"/>
         <sourceFile filename="src/ShopConfigScreenExtension.lua"/>
         <sourceFile filename="src/gui/NewFinanceFrame.lua"/>
     </extraSourceFiles>
