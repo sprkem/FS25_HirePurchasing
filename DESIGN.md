@@ -1,13 +1,16 @@
 # Design Ideas
 
-## TODO
+## Tests and TODO
 
-- Block sale or establish behaviour on vehicle sale
-- See about table rendering options
-- Ensure interest rate shown in dialog
-- Extend farm to save and load xml
-- Hook onto period change for charges
-- Determine end behaviour (popup notice of end of contract)
-    - What screen does the user go to to complete deal or return
-    - What happens if the user does nothing?
-        - Likely return? Refund dependent on lease type?
+
+- Test on tools [x]
+- Must limit items to leasable. Financing button should not be visible [x]
+- Complete a deal making all payments [x]
+- Handle selling a vehicle early appropriately [x]
+- Show interest rate on dialog
+- Augment vehicle show info
+
+# Missed paymets?
+
+- Miss a single payment
+- Miss 4 payments and lose vehicle

@@ -2,7 +2,7 @@
 <l10n>
 	<translationContributors/>
 	<texts>
-		<text name="fl_btn_finance" text="FINANCE"/>
+		<text name="fl_btn_finance" text="LEASE DEALS"/>
 		<text name="fl_new_finance_title" text="New lease deal"/>
 		<text name="fl_choose_deposit" text="Choose an amount to deposit"/>
 		<text name="fl_choose_duration" text="Choose the lease length in years"/>
@@ -15,5 +15,8 @@
 		<text name="fl_header_total_cost" text="Total cost"/>
 		<text name="fl_choose_option" text="Choose which option to lease with"/>
 		<text name="fl_not_enough_money" text="You need at least %s deposit to lease this item."/>
+		<text name="fl_deal_complete" text="Your lease deal for %s has finished."/>
+		<text name="fl_deal_complete_early" text="Your lease deal was settled because you sold the vehicle."/>
+		<!-- <text name="fl_missed_payment" text="You missed a payment lease deal payment. If you miss too many, the vehicle/tool will be repossessed."/> -->
 	</texts>
 </l10n>

@@ -5,32 +5,37 @@ ShopConfigScreen.setStoreItem = Utils.overwrittenFunction(ShopConfigScreen.setSt
     function(self, superFunc, storeItem, ...)
         superFunc(self, storeItem, ...)
 
-        local buyButton = self.buyButton
-        local financeButton = self.financeButton
 
-        if not financeButton and buyButton then
+        local buyButton = self.buyButton
+        local dealsButton = self.dealsButton
+
+        if not dealsButton and buyButton then
             local parent = buyButton.parent
-            financeButton = buyButton:clone(parent)
-            financeButton.name = "financeButton"
-            -- financeButton.text = g_i18n:getText("fl_btn_finance")
-            financeButton.inputActionName = "MENU_EXTRA_1"
-            self.financeButton = financeButton
+            dealsButton = buyButton:clone(parent)
+            dealsButton.name = "dealsButton"
+            -- dealsButton.text = g_i18n:getText("fl_btn_finance")
+            dealsButton.inputActionName = "MENU_EXTRA_1"
+            self.dealsButton = dealsButton
         end
 
-        if financeButton ~= nil then
-            financeButton:setDisabled(false)
+        if dealsButton ~= nil then
+            if not StoreItemUtil.getIsLeasable(storeItem) then
+                dealsButton:setDisabled(true)
+            else
+                dealsButton:setDisabled(false)
+            end
 
-            financeButton.onClick = "onClickFinance"
-            financeButton.text = g_i18n:getText("fl_btn_finance")
+            dealsButton.onClick = "onClickFinance"
+            dealsButton.text = g_i18n:getText("fl_btn_finance")
 
             self.onClickFinance = function()
                 print("onClickFinance called")
                 local dialog = g_gui:showDialog("newFinanceFrame")
                 if dialog ~= nil then
-                    dialog.target:setData(self, storeItem, self.configurations, self.licensePlateData)
+                    dialog.target:setData(storeItem, self.configurations, self.licensePlateData, self.totalPrice)
                 end
             end
 
-            financeButton.onClickCallback = self.onClickFinance
+            dealsButton.onClickCallback = self.onClickFinance
         end
     end)
