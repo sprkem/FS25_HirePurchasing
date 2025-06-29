@@ -19,19 +19,13 @@ function LeaseDeal.new(dealType, baseCost, deposit, durationMonths, finalFee, mo
     self.monthsPaid = monthsPaid
     self.vehicle = ""
     self.farmId = -1
-    -- self.missedPayments = 0
 
     return self
 end
 
----Processes monthly payments for the lease deal.
----If the farm does not have enough balance, it increments missed payments.
----If missed payments reach the maximum allowed, the deal ends.
 ---Returns true if the deal has ended, false otherwise.
 ---@return boolean
 function LeaseDeal:processMonthly()
-    -- local dealHasEnded = false
-
     local farm = g_farmManager:getFarmById(self.farmId)
 
     if self.monthsPaid == self.durationMonths then
@@ -57,27 +51,6 @@ function LeaseDeal:processMonthly()
         g_currentMission:addIngameNotification(FSBaseMission.INGAME_NOTIFICATION_CRITICAL,
             string.format(g_i18n:getText("fl_deal_complete"), self:getVehicle():getName()))
     end
-    -- if farm:getBalance() < amountDue then
-    --     self.missedPayments = self.missedPayments + 1
-    --     if self.missedPayments >= LeaseDeal.MAX_MISSED_PAYMENTS then
-    --         dealHasEnded = true
-    --         -- TODO - handle vehicle return or repossession
-    --     else
-    --         g_currentMission:addIngameNotification(FSBaseMission.INGAME_NOTIFICATION_CRITICAL,
-    --             g_i18n:getText("fl_missed_payment"))
-    --     end
-    -- else
-    --     -- Deduct monthly payment from farm balance
-    --     if g_currentMission:getIsServer() then
-    --         g_currentMission:addMoneyChange(-amountDue, self.farmId, MoneyType.LEASING_COSTS, true)
-    --     end
-
-    --     self.monthsPaid = self.monthsPaid + 1
-    --     -- if self.monthsPaid == self.durationMonths then
-    --     --     -- dealHasEnded = true
-    --     --     -- TODO - prompt user they final fee is due next month. If they do not have it, the vehicle will be repossessed.
-    --     -- end
-    -- end
 
     return false
 end
@@ -86,8 +59,7 @@ function LeaseDeal:getVehicle()
     return g_currentMission:getObjectByUniqueId(self.vehicle)
 end
 
-function LeaseDeal:getMonthlyPayment()
-    local amountFinanced = self.baseCost - self.deposit
+function LeaseDeal:getInterestRate()
     local depositRatio = self.deposit / self.baseCost
     local interestRate
 
@@ -101,10 +73,15 @@ function LeaseDeal:getMonthlyPayment()
         interestRate = 0.025
     end
 
-    -- Monthly interest rate
+    return interestRate
+end
+
+function LeaseDeal:getMonthlyPayment()
+    local amountFinanced = self.baseCost - self.deposit
+    local interestRate = self:getInterestRate()
+
     local monthlyInterest = interestRate / 12
 
-    -- Calculate monthly payment (amortizing loan formula with balloon payment)
     local monthlyPayment
     if monthlyInterest > 0 then
         local pv = amountFinanced
@@ -150,7 +127,6 @@ function LeaseDeal:writeStream(streamId, connection)
     streamWriteInt32(streamId, self.monthsPaid)
     streamWriteString(streamId, self.vehicle)
     streamWriteInt32(streamId, self.farmId)
-    -- streamWriteInt32(streamId, self.missedPayments)
 end
 
 function LeaseDeal:readStream(streamId, connection)
@@ -162,7 +138,6 @@ function LeaseDeal:readStream(streamId, connection)
     self.monthsPaid = streamReadInt32(streamId)
     self.vehicle = streamReadString(streamId)
     self.farmId = streamReadInt32(streamId)
-    -- self.missedPayments = streamReadInt32(streamId)
 end
 
 function LeaseDeal:saveToXmlFile(xmlFile, key)
@@ -174,7 +149,6 @@ function LeaseDeal:saveToXmlFile(xmlFile, key)
     setXMLInt(xmlFile, key .. "#monthsPaid", self.monthsPaid)
     setXMLString(xmlFile, key .. "#vehicle", self.vehicle)
     setXMLInt(xmlFile, key .. "#farmId", self.farmId)
-    -- setXMLInt(xmlFile, key .. "#missedPayments", self.missedPayments)
 end
 
 function LeaseDeal:loadFromXMLFile(xmlFile, key)
@@ -186,5 +160,4 @@ function LeaseDeal:loadFromXMLFile(xmlFile, key)
     self.monthsPaid = getXMLInt(xmlFile, key .. "#monthsPaid")
     self.vehicle = getXMLString(xmlFile, key .. "#vehicle")
     self.farmId = getXMLInt(xmlFile, key .. "#farmId")
-    -- self.missedPayments = getXMLInt(xmlFile, key .. "#missedPayments")
 end

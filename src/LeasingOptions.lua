@@ -9,10 +9,7 @@ function LeasingOptions:loadMap()
 
     g_gui:loadGui(LeasingOptions.dir .. "src/gui/NewFinanceFrame.xml", "newFinanceFrame", newFinanceDialog)
     g_currentMission.LeasingOptions = self
-end
-
-function LeasingOptions:onStartMission()
-    print("LeasingOptions:onStartMission called")
+    self:loadFromXMLFile()
 end
 
 function LeasingOptions:registerLeaseDeal(leaseDeal)
@@ -54,8 +51,8 @@ function LeasingOptions:loadFromXMLFile()
 
     local key = "leaseDeals";
 
-    if fileExists(savegameFolderPath .. "tasklist.xml") then
-        local xmlFile = loadXMLFile(key, savegameFolderPath .. "tasklist.xml");
+    if fileExists(savegameFolderPath .. "leaseDeals.xml") then
+        local xmlFile = loadXMLFile(key, savegameFolderPath .. "leaseDeals.xml");
 
         local i = 0
         while true do
@@ -107,5 +104,5 @@ end
 
 g_messageCenter:subscribe(MessageType.PERIOD_CHANGED, LeasingOptions.periodChanged)
 g_messageCenter:subscribe(MessageType.VEHICLE_REMOVED, LeasingOptions.onVehicleSellEvent)
-FSBaseMission.onStartMission = Utils.prependedFunction(FSBaseMission.onStartMission, LeasingOptions.onStartMission)
+FSBaseMission.saveSavegame = Utils.appendedFunction(FSBaseMission.saveSavegame, LeasingOptions.saveToXmlFile)
 addModEventListener(LeasingOptions)

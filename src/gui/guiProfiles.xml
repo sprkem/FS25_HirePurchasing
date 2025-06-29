@@ -7,8 +7,12 @@
         <textSize value="20px" />
         <textColor value="$preset_fs25_colorGreen" />
     </Profile>
-    <Profile name="fl_dialogText_Header" extends="fl_dialogText_TL">
+    <Profile name="fl_dialogText_DetailText" extends="fl_dialogText_TL">
         <textSize value="16px" />                
+        <textColor value="$preset_fs25_colorMainLight" />
+    </Profile>
+    <Profile name="fl_dialogText_DisclaimerText" extends="fl_dialogText_TL">
+        <textSize value="12px" />                
         <textColor value="$preset_fs25_colorMainLight" />
     </Profile>
     <Profile name="fl_dialogText_Option_Value" extends="fl_dialogText_TL">

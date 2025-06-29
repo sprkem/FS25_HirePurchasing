@@ -26,9 +26,6 @@ function NewFinanceFrame:init()
 end
 
 function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, totalPrice)
-    -- NewFinanceFrame:superClass().setData(self, parent, storeItem)
-    print("NewFinanceFrame:setData called")
-
     -- local xmlFile = loadXMLFile("Temp", "dataS/gui/dialogs/OptionDialog.xml")
     -- saveXMLFileTo(xmlFile, g_currentMission.missionInfo.savegameDirectory .. "/tempUI.xml")
     -- delete(xmlFile);
@@ -54,7 +51,7 @@ function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, to
 
     if #self.depositOptions == 0 then
         InfoDialog.show(string.format(g_i18n:getText("fl_not_enough_money"),
-            g_i18n:formatMoney(potentialDepositOptions[1], 0, 0, true)))
+            g_i18n:formatMoney(potentialDepositOptions[1], 0, true, true)))
         self:close()
         return
     end
@@ -67,7 +64,7 @@ function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, to
     local depositTexts = {}
     for _, deposit in pairs(self.depositOptions) do
         local percentage = math.floor(deposit / totalPrice * 100)
-        table.insert(depositTexts, string.format("%s [%s%%]", g_i18n:formatMoney(deposit, 0, 0, true), percentage))
+        table.insert(depositTexts, string.format("%s [%s%%]", g_i18n:formatMoney(deposit, 0, true, true), percentage))
     end
 
     self.depositOption:setTexts(depositTexts)
@@ -93,12 +90,10 @@ end
 
 function NewFinanceFrame:onOpen()
     NewFinanceFrame:superClass().onOpen(self)
-    print("NewFinanceFrame:onOpen called")
 end
 
 function NewFinanceFrame:onClose()
     NewFinanceFrame:superClass().onClose(self)
-    print("NewFinanceFrame:onClose called")
     self:init()
 end
 
@@ -114,21 +109,25 @@ function NewFinanceFrame:updateView()
     local offerThree = self.offerings[3]
     local offerFour = self.offerings[4]
 
-    self.offerOneMonthly:setText(g_i18n:formatMoney(offerOne:getMonthlyPayment(), 0, 0, true))
-    self.offerOneFinal:setText(g_i18n:formatMoney(offerOne.finalFee, 0, 0, true))
-    self.offerOneTotal:setText(g_i18n:formatMoney(offerOne:getTotalCost(), 0, 0, true))
+    self.offerOneInterest:setText(string.format("%.2f%%", offerOne:getInterestRate() * 100))
+    self.offerOneMonthly:setText(g_i18n:formatMoney(offerOne:getMonthlyPayment(), 0, true, true))
+    self.offerOneFinal:setText(g_i18n:formatMoney(offerOne.finalFee, 0, true, true))
+    self.offerOneTotal:setText(g_i18n:formatMoney(offerOne:getTotalCost(), 0, true, true))
 
-    self.offerTwoMonthly:setText(g_i18n:formatMoney(offerTwo:getMonthlyPayment(), 0, 0, true))
-    self.offerTwoFinal:setText(g_i18n:formatMoney(offerTwo.finalFee, 0, 0, true))
-    self.offerTwoTotal:setText(g_i18n:formatMoney(offerTwo:getTotalCost(), 0, 0, true))
+    self.offerTwoInterest:setText(string.format("%.2f%%", offerTwo:getInterestRate() * 100))
+    self.offerTwoMonthly:setText(g_i18n:formatMoney(offerTwo:getMonthlyPayment(), 0, true, true))
+    self.offerTwoFinal:setText(g_i18n:formatMoney(offerTwo.finalFee, 0, true, true))
+    self.offerTwoTotal:setText(g_i18n:formatMoney(offerTwo:getTotalCost(), 0, true, true))
 
-    self.offerThreeMonthly:setText(g_i18n:formatMoney(offerThree:getMonthlyPayment(), 0, 0, true))
-    self.offerThreeFinal:setText(g_i18n:formatMoney(offerThree.finalFee, 0, 0, true))
-    self.offerThreeTotal:setText(g_i18n:formatMoney(offerThree:getTotalCost(), 0, 0, true))
+    self.offerThreeInterest:setText(string.format("%.2f%%", offerThree:getInterestRate() * 100))
+    self.offerThreeMonthly:setText(g_i18n:formatMoney(offerThree:getMonthlyPayment(), 0, true, true))
+    self.offerThreeFinal:setText(g_i18n:formatMoney(offerThree.finalFee, 0, true, true))
+    self.offerThreeTotal:setText(g_i18n:formatMoney(offerThree:getTotalCost(), 0, true, true))
 
-    self.offerFourMonthly:setText(g_i18n:formatMoney(offerFour:getMonthlyPayment(), 0, 0, true))
-    self.offerFourFinal:setText(g_i18n:formatMoney(offerFour.finalFee, 0, 0, true))
-    self.offerFourTotal:setText(g_i18n:formatMoney(offerFour:getTotalCost(), 0, 0, true))
+    self.offerFourInterest:setText(string.format("%.2f%%", offerFour:getInterestRate() * 100))
+    self.offerFourMonthly:setText(g_i18n:formatMoney(offerFour:getMonthlyPayment(), 0, true, true))
+    self.offerFourFinal:setText(g_i18n:formatMoney(offerFour.finalFee, 0, true, true))
+    self.offerFourTotal:setText(g_i18n:formatMoney(offerFour:getTotalCost(), 0, true, true))
 end
 
 function NewFinanceFrame:refreshOfferings()
@@ -138,10 +137,8 @@ end
 
 function NewFinanceFrame:getLeaseAgreementOptions(durationMonths, deposit, baseCost)
     local remainingValueOptions = { 0, 0.1, 0.2, 0.3 }
-    -- for each option, get a lease agreement
     local agreements            = {}
     for _, remainingValuePercent in ipairs(remainingValueOptions) do
-        -- local agreement = self:calculateLeaseAgreement(durationMonths, deposit, baseCost, remainingValuePercent)
         table.insert(agreements, LeaseDeal.new(
             LeaseDeal.TYPE.HIRE_PURCHASE,
             baseCost,
@@ -169,7 +166,6 @@ function NewFinanceFrame:onClickOfferSelection(index)
 end
 
 function NewFinanceFrame:onClickPurchase(sender)
-    print("NewFinanceFrame:onClickPurchase called")
     local leaseDeal = self.offerings[self.offeringIndex]
     local farm = g_farmManager:getFarmByUserId(g_currentMission.playerUserId)
     leaseDeal.farmId = farm.farmId

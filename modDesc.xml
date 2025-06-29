@@ -9,7 +9,7 @@
     <description>
             <en><![CDATA[Leasing Options
 
-A mod that adds realistic leasing models to the game.
+A mod that adds realistic leasing options to the game.
 ]]></en>		
     <de><![CDATA[Leasing Options
 
@@ -25,6 +25,7 @@ Un mod qui ajoute des modèles de leasing réalistes au jeu.
         <sourceFile filename="src/LeaseDeal.lua"/>
         <sourceFile filename="src/BuyVehicleDataExtension.lua"/>
         <sourceFile filename="src/ShopConfigScreenExtension.lua"/>
+        <sourceFile filename="src/VehicleExtension.lua"/>
         <sourceFile filename="src/gui/NewFinanceFrame.lua"/>
     </extraSourceFiles>
     <multiplayer supported="true"/>

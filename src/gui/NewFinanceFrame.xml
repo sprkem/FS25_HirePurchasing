@@ -9,53 +9,56 @@
         <GuiElement profile="fs25_dialogContentContainer">
             <Animation profile="fs25_dialogLoading" id="iconLoadingElement" />
 
-            <Text profile="fs25_dialogTitle" id="dialogTitleElement" position="0px -40px" text="$l10n_fl_new_finance_title"/>
+            <Text profile="fs25_dialogTitle" id="dialogTitleElement" position="0px -30px" text="$l10n_fl_new_finance_title"/>
 
-            <Text profile="fs25_dialogText" position="0px -100px" text="$l10n_fl_choose_deposit"/>
-            <MultiTextOption profile="fl_multiTextOption_TC" id="depositOption" position="0px -130px" focusInit="onOpen" onClick="onClickDepositLevel" />
+            <Text profile="fs25_dialogText" position="0px -90px" text="$l10n_fl_choose_deposit"/>
+            <MultiTextOption profile="fl_multiTextOption_TC" id="depositOption" position="0px -120px" focusInit="onOpen" onClick="onClickDepositLevel" />
+
+            <Text profile="fl_dialogText_Option_Value" id="interestRate" position="0px -150px"/>
 
             <Text profile="fs25_dialogText" position="0px -200px" text="$l10n_fl_choose_duration"/>
             <MultiTextOption profile="fl_multiTextOption_TC" id="durationOption" position="0px -230px" onClick="onClickDuration" />
 
-            <GuiElement position="-175px -180px">
+            <GuiElement position="-175px -170px">
                 <GuiElement position="0px 0px">
-                    <Text profile="fl_dialogText_Option_Title" text="$l10n_fl_option_one"/>
-                    <Text profile="fl_dialogText_Header" position="0px -200px" text="$l10n_fl_header_monthly"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerOneMonthly" position="0px -240px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -280px" text="$l10n_fl_header_final_fee"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerOneFinal" position="0px -320px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -360px" text="$l10n_fl_header_total_cost"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerOneTotal" position="0px -400px"/>
+                    <Text profile="fl_dialogText_DetailText" position="0px -200px" text="$l10n_fl_header_interest"/>
+                    <Text profile="fl_dialogText_DetailText" position="0px -240px" text="$l10n_fl_header_monthly"/>
+                    <Text profile="fl_dialogText_DetailText" position="0px -280px" text="$l10n_fl_header_final_fee"/>
+                    <Text profile="fl_dialogText_DetailText" position="0px -320px" text="$l10n_fl_header_total_cost"/>
                 </GuiElement>
-                <GuiElement position="200px 0px">
+                <GuiElement position="150px 0px">
                     <Text profile="fl_dialogText_Option_Title" text="$l10n_fl_option_two"/>
-                    <Text profile="fl_dialogText_Header" position="0px -200px" text="$l10n_fl_header_monthly"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerTwoMonthly" position="0px -240px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -280px" text="$l10n_fl_header_final_fee"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerTwoFinal" position="0px -320px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -360px" text="$l10n_fl_header_total_cost"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerTwoTotal" position="0px -400px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerOneInterest" position="0px -200px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerOneMonthly" position="0px -240px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerOneFinal" position="0px -280px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerOneTotal" position="0px -320px"/>
                 </GuiElement>
-                <GuiElement position="400px 0px">
+                <GuiElement position="300px 0px">
+                    <Text profile="fl_dialogText_Option_Title" text="$l10n_fl_option_two"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerTwoInterest" position="0px -200px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerTwoMonthly" position="0px -240px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerTwoFinal" position="0px -280px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerTwoTotal" position="0px -320px"/>         
+                </GuiElement>
+                <GuiElement position="450px 0px">
                     <Text profile="fl_dialogText_Option_Title" text="$l10n_fl_option_three"/>
-                    <Text profile="fl_dialogText_Header" position="0px -200px" text="$l10n_fl_header_monthly"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerThreeInterest" position="0px -200px"/>
                     <Text profile="fl_dialogText_Option_Value" id="offerThreeMonthly" position="0px -240px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -280px" text="$l10n_fl_header_final_fee"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerThreeFinal" position="0px -320px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -360px" text="$l10n_fl_header_total_cost"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerThreeTotal" position="0px -400px"/>                    
+                    <Text profile="fl_dialogText_Option_Value" id="offerThreeFinal" position="0px -280px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerThreeTotal" position="0px -320px"/>  
                 </GuiElement>
                 <GuiElement position="600px 0px">
                     <Text profile="fl_dialogText_Option_Title" text="$l10n_fl_option_four"/>
-                    <Text profile="fl_dialogText_Header" position="0px -200px" text="$l10n_fl_header_monthly"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerFourInterest" position="0px -200px"/>
                     <Text profile="fl_dialogText_Option_Value" id="offerFourMonthly" position="0px -240px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -280px" text="$l10n_fl_header_final_fee"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerFourFinal" position="0px -320px"/>
-                    <Text profile="fl_dialogText_Header" position="0px -360px" text="$l10n_fl_header_total_cost"/>
-                    <Text profile="fl_dialogText_Option_Value" id="offerFourTotal" position="0px -400px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerFourFinal" position="0px -280px"/>
+                    <Text profile="fl_dialogText_Option_Value" id="offerFourTotal" position="0px -320px"/>
                 </GuiElement>
             </GuiElement>
 
+            <Text profile="fl_dialogText_DisclaimerText" position="0px -540px" size="900px 30px" text="$l10n_fl_disclaimer_line_one"/>
+            <Text profile="fl_dialogText_DisclaimerText" position="0px -560px" size="900px 30px" text="$l10n_fl_disclaimer_line_two"/>
+            <Text profile="fl_dialogText_DisclaimerText" position="0px -580px" size="900px 30px" text="$l10n_fl_disclaimer_line_three"/>
 
             <Text profile="fs25_dialogText" position="0px -620px" text="$l10n_fl_choose_option"/>
             <MultiTextOption profile="fl_multiTextOption_TC" id="offerOption" position="0px -650px" onClick="onClickOfferSelection" texts="1|2|3|4" />

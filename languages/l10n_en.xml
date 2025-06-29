@@ -13,10 +13,15 @@
 		<text name="fl_header_monthly" text="Monthly cost"/>
 		<text name="fl_header_final_fee" text="Final fee"/>
 		<text name="fl_header_total_cost" text="Total cost"/>
+		<text name="fl_header_interest" text="Interest rate"/>
+		<text name="fl_header_settlement_cost" text="Settlement cost"/>
+		<text name="fl_header_months_left" text="Months remaining"/>
 		<text name="fl_choose_option" text="Choose which option to lease with"/>
 		<text name="fl_not_enough_money" text="You need at least %s deposit to lease this item."/>
 		<text name="fl_deal_complete" text="Your lease deal for %s has finished."/>
 		<text name="fl_deal_complete_early" text="Your lease deal was settled because you sold the vehicle."/>
-		<!-- <text name="fl_missed_payment" text="You missed a payment lease deal payment. If you miss too many, the vehicle/tool will be repossessed."/> -->
+		<text name="fl_disclaimer_line_one" text="* Payments will be collected automatically and may put you in to arrears."/>
+		<text name="fl_disclaimer_line_two" text="** If you sell the leased item before the lease is complete, you will pay the full outstanding amount."/>
+		<text name="fl_disclaimer_line_three" text="*** The deposit will be taken immediately. Monthly payments begin next month. The final fee is due the month after the last monthly payment."/>		
 	</texts>
 </l10n>
