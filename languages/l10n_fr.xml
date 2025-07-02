@@ -2,7 +2,26 @@
 <l10n>
     <translationContributors/>
     <texts>
-        <text name="garage_used_equipment_title" text="Recherches d'équipements d'occasion"/>
-		<text name="garage_used_equipment_ttl_format" text="%s jours restants"/>
+        <text name="fl_btn_finance" text="Achat avec garantie"/>
+        <text name="fl_new_finance_title" text="Nouveau contrat d'achat avec garantie"/>
+        <text name="fl_choose_deposit" text="Choisissez une somme à dépenser"/>
+        <text name="fl_choose_duration" text="Choisissez la durée du contrat en années"/>
+        <text name="fl_option_one" text="Option 1"/>
+        <text name="fl_option_two" text="Option 2"/>
+        <text name="fl_option_three" text="Option 3"/>
+        <text name="fl_option_four" text="Option 4"/>
+        <text name="fl_header_monthly" text="Coût mensuel"/>
+        <text name="fl_header_final_fee" text="Frais de fin"/>
+        <text name="fl_header_total_cost" text="Coût total"/>
+        <text name="fl_header_interest" text="Taux d'intérêt"/>
+        <text name="fl_header_settlement_cost" text="Coût de liquidation"/>
+        <text name="fl_header_months_left" text="Mois restants"/>
+        <text name="fl_choose_option" text="Choisissez laquelle utiliser pour acheter avec"/>
+        <text name="fl_not_enough_money" text="Vous avez besoin d'au moins %s pour acheter cette pièce avec une garantie."/>
+        <text name="fl_deal_complete" text="Votre contrat d'achat avec garantie pour %s est terminé"/>
+        <text name="fl_deal_complete_early" text="Votre contrat d'achat avec garantie a été liquidé car vous avez vendu la voiture"/>
+        <text name="fl_disclaimer_line_one" text="* Les paiements seront collectés automatiquement et peuvent vous mettre en arrière-paiement"/>
+        <text name="fl_disclaimer_line_two" text="** Si vous vendez l'item avant que le contrat d'achat avec garantie soit terminé, vous devrez payer le montant total"/>
+        <text name="fl_disclaimer_line_three" text="*** La caution sera prise immédiatement. Les paiements mensuels commenceront le mois suivant. Le frais de fin est dû le mois suivant le dernier paiement"/>
     </texts>
 </l10n>

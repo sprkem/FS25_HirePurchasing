@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <l10n>
-	<translationContributors/>
-	<texts>
-		<text name="garage_used_equipment_title" text="Suche nach Gebrauchtgeräten"/>
-		<text name="garage_used_equipment_ttl_format" text="Noch %s tage"/>
-	</texts>
+    <translationContributors/>
+    <texts>
+        <text name="fl_btn_finance" text="Kauf mit Leasing"/>
+        <text name="fl_new_finance_title" text="Neue Finanzierung"/>
+        <text name="fl_choose_deposit" text="Einzahlung wählen"/>
+        <text name="fl_choose_duration" text="Laufzeit wählen"/>
+        <text name="fl_option_one" text="Option 1"/>
+        <text name="fl_option_two" text="Option 2"/>
+        <text name="fl_option_three" text="Option 3"/>
+        <text name="fl_option_four" text="Option 4"/>
+        <text name="fl_header_monthly" text="Monatliche Zahlung"/>
+        <text name="fl_header_final_fee" text="Endgebühr"/>
+        <text name="fl_header_total_cost" text="Gesamtkosten"/>
+        <text name="fl_header_interest" text="Zinsen"/>
+        <text name="fl_header_settlement_cost" text="Liquidationsgebühr"/>
+        <text name="fl_header_months_left" text="Blaue Zahlen"/>
+        <text name="fl_choose_option" text="Wähle die Option für die Finanzierung"/>
+        <text name="fl_not_enough_money" text="Sie benötigen mindestens %s für die Finanzierung."/>
+        <text name="fl_deal_complete" text="Ihre Finanzierung für %s ist abgeschlossen"/>
+        <text name="fl_deal_complete_early" text="Ihre Finanzierung wurde früh abgeschlossen, weil Sie die Fahrzeug verkauft haben."/>
+        <text name="fl_disclaimer_line_one" text="* Die monatlichen Zahlungen werden automatisch abgeschlossen und können Sie in Schulden bringen."/>
+        <text name="fl_disclaimer_line_two" text="** Wenn Sie das Fahrzeug vor Abschluss der Finanzierung verkaufen, müssen Sie den gesamten Restbetrag zahlen."/>
+        <text name="fl_disclaimer_line_three" text="*** Die Einzahlung wird sofort fällig. Die monatlichen Zahlungen beginnen im nächsten Monat. Die Endgebühr ist im Monat nach dem letzten Zahlungstermin fällig."/>
+    </texts>
 </l10n>

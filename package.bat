@@ -1,2 +1,2 @@
-del FS25_LeasingOptions.zip
-7z a -tzip FS25_LeasingOptions.zip -w . -x!*.git* -x!*.bat -x!*.vscode*
+del FS25_HirePurchasing.zip
+7z a -tzip FS25_HirePurchasing.zip -w . -x!*.git* -x!*.bat -x!*.vscode*

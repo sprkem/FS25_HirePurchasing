@@ -2,10 +2,10 @@
 <l10n>
 	<translationContributors/>
 	<texts>
-		<text name="fl_btn_finance" text="LEASE DEALS"/>
-		<text name="fl_new_finance_title" text="New lease deal"/>
+		<text name="fl_btn_finance" text="HIRE PURCHASE"/>
+		<text name="fl_new_finance_title" text="New hire purchase deal"/>
 		<text name="fl_choose_deposit" text="Choose an amount to deposit"/>
-		<text name="fl_choose_duration" text="Choose the lease length in years"/>
+		<text name="fl_choose_duration" text="Choose the deal length in years"/>
 		<text name="fl_option_one" text="Option one"/>
 		<text name="fl_option_two" text="Option two"/>
 		<text name="fl_option_three" text="Option three"/>
@@ -16,12 +16,12 @@
 		<text name="fl_header_interest" text="Interest rate"/>
 		<text name="fl_header_settlement_cost" text="Settlement cost"/>
 		<text name="fl_header_months_left" text="Months remaining"/>
-		<text name="fl_choose_option" text="Choose which option to lease with"/>
-		<text name="fl_not_enough_money" text="You need at least %s deposit to lease this item."/>
-		<text name="fl_deal_complete" text="Your lease deal for %s has finished."/>
-		<text name="fl_deal_complete_early" text="Your lease deal was settled because you sold the vehicle."/>
+		<text name="fl_choose_option" text="Choose which option to purchase with"/>
+		<text name="fl_not_enough_money" text="You need at least %s deposit to hire purchase this item."/>
+		<text name="fl_deal_complete" text="Your hire purchase deal for %s has finished."/>
+		<text name="fl_deal_complete_early" text="Your hire purchase deal was settled because you sold the vehicle."/>
 		<text name="fl_disclaimer_line_one" text="* Payments will be collected automatically and may put you in to arrears."/>
-		<text name="fl_disclaimer_line_two" text="** If you sell the leased item before the lease is complete, you will pay the full outstanding amount."/>
+		<text name="fl_disclaimer_line_two" text="** If you sell the item before the hire purchase deal is complete, you will pay the full outstanding amount."/>
 		<text name="fl_disclaimer_line_three" text="*** The deposit will be taken immediately. Monthly payments begin next month. The final fee is due the month after the last monthly payment."/>		
 	</texts>
 </l10n>
