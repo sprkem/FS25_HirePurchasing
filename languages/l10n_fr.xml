@@ -17,7 +17,7 @@
         <text name="fl_header_settlement_cost" text="Coût de liquidation"/>
         <text name="fl_header_months_left" text="Mois restants"/>
         <text name="fl_choose_option" text="Choisissez laquelle utiliser pour acheter avec"/>
-        <text name="fl_not_enough_money" text="Vous avez besoin d'au moins %s pour acheter cette pièce avec une garantie."/>
+        <text name="fl_not_enough_money_deposit" text="Vous avez besoin d'au moins %s pour acheter cette pièce avec une garantie."/>
         <text name="fl_deal_complete" text="Votre contrat d'achat avec garantie pour %s est terminé"/>
         <text name="fl_deal_complete_early" text="Votre contrat d'achat avec garantie a été liquidé car vous avez vendu la voiture"/>
         <text name="fl_disclaimer_line_one" text="* Les paiements seront collectés automatiquement et peuvent vous mettre en arrière-paiement"/>

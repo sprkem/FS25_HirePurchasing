@@ -51,7 +51,7 @@ function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, to
     end
 
     if #self.depositOptions == 0 then
-        InfoDialog.show(string.format(g_i18n:getText("fl_not_enough_money"),
+        InfoDialog.show(string.format(g_i18n:getText("fl_not_enough_money_deposit"),
             g_i18n:formatMoney(potentialDepositOptions[1], 0, true, true)))
         self:close()
         return

@@ -28,7 +28,7 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
         <sourceFile filename="src/BuyVehicleDataExtension.lua"/>
         <sourceFile filename="src/ShopConfigScreenExtension.lua"/>
         <sourceFile filename="src/VehicleExtension.lua"/>
-        <sourceFile filename="src/gui/NewFinanceFrame.lua"/>
+        <sourceFile filename="src/gui/NewFinanceFrame.lua"/>        
     </extraSourceFiles>
     <multiplayer supported="true"/>
     <l10n filenamePrefix="languages/l10n" />

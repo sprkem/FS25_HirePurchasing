@@ -17,7 +17,7 @@
         <text name="fl_header_settlement_cost" text="Liquidationsgebühr"/>
         <text name="fl_header_months_left" text="Blaue Zahlen"/>
         <text name="fl_choose_option" text="Wähle die Option für die Finanzierung"/>
-        <text name="fl_not_enough_money" text="Sie benötigen mindestens %s für die Finanzierung."/>
+        <text name="fl_not_enough_money_deposit" text="Sie benötigen mindestens %s für die Finanzierung."/>
         <text name="fl_deal_complete" text="Ihre Finanzierung für %s ist abgeschlossen"/>
         <text name="fl_deal_complete_early" text="Ihre Finanzierung wurde früh abgeschlossen, weil Sie die Fahrzeug verkauft haben."/>
         <text name="fl_disclaimer_line_one" text="* Die monatlichen Zahlungen werden automatisch abgeschlossen und können Sie in Schulden bringen."/>

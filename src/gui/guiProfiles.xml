@@ -19,4 +19,39 @@
         <textSize value="12px" />        
         <textColor value="$preset_fs25_colorGreen" />        
     </Profile>
+    <Profile name="fl_MenuHeaderIcon" extends="baseReference" with="anchorMiddleCenter">
+        <imageSliceId value="gui.icon_ingameMenu_contracts" />
+        <imageColor value="$preset_fs25_colorMainDark" />
+    </Profile>
+    <Profile name="fl_CurrentDealsText" extends="fs25_statisticsHeaderText" with="anchorTopLeft" />
+    <Profile name="fl_Header" extends="baseReference">
+        <imageColor value="0 0 0 0" />
+        <textFocusedColor value="$preset_fs25_colorMainHighlight" />
+        <textHighlightedColor value="$preset_fs25_colorMainHighlight" />
+        <textSize value="16px" />
+        <textBold value="true" />
+        <textUpperCase value="true" />
+        <textColor value="$preset_colorWhite_50" />
+        <textAlignment value="left" />
+        <textDisabledColor value="$preset_colorDisabled" />
+    </Profile>
+    <Profile name="fl_table" extends="emptyPanel" with="anchorStretchingYLeft pivotTopLeft" />
+    <Profile name="fl_ListItem" extends="baseReference" with="anchorTopStretchingX alternating">
+        <height value="32px"/>
+        <imageColor value="$preset_fs25_colorGrey" />
+        <imageSelectedColor value="$preset_fs25_colorMainHighlight" />
+        <alternateBackgroundColor value="$preset_fs25_colorGreyDark_50" />
+    </Profile>
+    <Profile name="fl_RowCellLeft" extends="baseReference" with="anchorStretchingYLeft">
+        <textBold value="false" />
+        <textSize value="15px" />
+        <textAlignment value="left" />
+        <textColor value="$preset_fs25_colorMainLight" />
+        <textSelectedColor value="$preset_fs25_colorMainDark" />
+        <textDisabledColor value="$preset_colorDisabled" />
+    </Profile>
+    <Profile name="fl_RowCellRight" extends="fl_RowCellLeft">
+        <textAlignment value="right" />
+    </Profile>
+    <Profile name="fl_SliderBox" extends="fs25_listSliderBox" with="anchorTopRight" />
 </GUIProfiles>

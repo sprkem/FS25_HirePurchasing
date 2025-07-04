@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI name="menuHirePurchasing">
+    <GuiElement profile="fs25_menuContainer">
+        <GuiElement profile="fs25_menuHeaderPanel">
+            <Bitmap profile="fs25_menuHeaderIconBg">
+                <Bitmap profile="fl_MenuHeaderIcon" size="50px 50px"/>
+            </Bitmap>
+            <Text profile="fs25_menuHeaderTitle" id="categoryHeaderText" text="$l10n_fl_header_hire_purchasing" size="500px 32px"/>
+        </GuiElement>
+
+        <GuiElement id="tableContainer">
+            <Text profile="fl_CurrentDealsText" text="$l10n_fl_header_current_deals" />
+            <GuiElement profile="fs25_statisticsHeaderBox" position="0px -40px">
+                <Button profile="fl_Header" position="40px 0px" text="$l10n_fl_header_item_name" handleFocus="false" />
+                <Button profile="fl_Header" position="240px 0px" text="$l10n_fl_header_monthly" handleFocus="false" />
+                <Button profile="fl_Header" position="420px 0px" text="$l10n_fl_header_months_left" handleFocus="false" />
+                <Button profile="fl_Header" position="620px 0px" text="$l10n_fl_header_final_fee" handleFocus="false" />
+                <Button profile="fl_Header" position="740px 0px" text="$l10n_fl_header_remaining_cost" handleFocus="false" />
+                <Button profile="fl_Header" position="920px 0px" text="$l10n_fl_header_settlement_cost" handleFocus="false" />
+                <!-- <Button profile="fl_HeaderRight" position="1010px 0px" size="100px 32px" text="$l10n_ui_header_priority" handleFocus="false" /> -->
+            </GuiElement>
+
+            <SmoothList profile="fl_table" id="currentDealsTable" position="0px -80px">
+                <ListItem profile="fl_ListItem">
+                    <Text profile="fl_RowCellLeft" position="40px 0px" size="200px 32px" name="item_name"/>
+                    <Text profile="fl_RowCellLeft" position="240px 0px" size="200px 32px" name="monthly_cost"/>
+                    <Text profile="fl_RowCellLeft" position="420px 0px" size="400px 32px" name="remaining_months"/>
+                    <Text profile="fl_RowCellLeft" position="620px 0px" size="150px 32px" name="final_fee"/>
+                    <Text profile="fl_RowCellLeft" position="740px 0px" size="100px 32px" name="remaining_cost"/>
+                    <Text profile="fl_RowCellLeft" position="920px 0px" size="120px 32px" name="settlement_cost"/>
+                    <!-- <Text profile="taskListRowCellRight" position="1010px 0px" size="100px 32px" name="settlement_cost"/> -->
+                </ListItem>
+            </SmoothList>
+
+            <ThreePartBitmap profile="fl_SliderBox" position="28px -80px" size="6px 670px">
+                <Slider profile="fs25_listSlider" dataElementId="currentDealsTable" />
+            </ThreePartBitmap>
+        </GuiElement>
+
+        <GuiElement id="noDataContainer">
+            <Text profile="dialogTitle" text="$l10n_ui_noShopItems" position="0px -40px" />
+        </GuiElement>
+    </GuiElement>
+</GUI>
