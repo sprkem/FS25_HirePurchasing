@@ -83,17 +83,18 @@ function LeaseDeal:getMonthlyPayment()
     local monthlyInterest = interestRate / 12
 
     local monthlyPayment
-    if monthlyInterest > 0 then
-        local pv = amountFinanced
-        local fv = self.finalFee
-        local n = self.durationMonths
-        local r = monthlyInterest
-        monthlyPayment = (pv - fv / ((1 + r) ^ n)) * (r * (1 + r) ^ n) / ((1 + r) ^ n - 1)
-    else
-        monthlyPayment = (amountFinanced + self.finalFee) / self.durationMonths
-    end
+    local pv = amountFinanced
+    local fv = self.finalFee
+    local n = self.durationMonths
+    local r = monthlyInterest
+    monthlyPayment = (pv - fv / ((1 + r) ^ n)) * (r * (1 + r) ^ n) / ((1 + r) ^ n - 1)
 
     return monthlyPayment
+end
+
+function LeaseDeal:getMonthlyAmountForSettlement()
+    local amountFinanced = self.baseCost - self.deposit - self.finalFee
+    return amountFinanced / self.durationMonths
 end
 
 function LeaseDeal:getTotalCost()
@@ -101,10 +102,15 @@ function LeaseDeal:getTotalCost()
     return (monthlyPayment * self.durationMonths) + self.finalFee + self.deposit
 end
 
-function LeaseDeal:getSettlementCost()
+function LeaseDeal:getRemainingCost()
     local monthlyPayment = self:getMonthlyPayment()
     local remainingMonths = self.durationMonths - self.monthsPaid
     return (monthlyPayment * remainingMonths) + self.finalFee
+end
+
+function LeaseDeal:getSettlementCost()
+    local remainingMonths = self.durationMonths - self.monthsPaid
+    return (self:getMonthlyAmountForSettlement() * remainingMonths) + self.finalFee
 end
 
 function LeaseDeal:paySettlemenCost()
@@ -113,9 +119,6 @@ function LeaseDeal:paySettlemenCost()
 
     g_currentMission:addMoneyChange(-settlementCost, self.farmId, MoneyType.LEASING_COSTS, true)
     farm:changeBalance(-settlementCost, MoneyType.LEASING_COSTS)
-
-    g_currentMission:addIngameNotification(FSBaseMission.INGAME_NOTIFICATION_CRITICAL,
-        g_i18n:getText("fl_deal_complete_early"))
 end
 
 function LeaseDeal:writeStream(streamId, connection)
