@@ -83,21 +83,17 @@ function LeaseDeal:getMonthlyPayment()
     local monthlyInterest = interestRate / 12
 
     local monthlyPayment
-    if monthlyInterest > 0 then
-        local pv = amountFinanced
-        local fv = self.finalFee
-        local n = self.durationMonths
-        local r = monthlyInterest
-        monthlyPayment = (pv - fv / ((1 + r) ^ n)) * (r * (1 + r) ^ n) / ((1 + r) ^ n - 1)
-    else
-        monthlyPayment = (amountFinanced + self.finalFee) / self.durationMonths
-    end
+    local pv = amountFinanced
+    local fv = self.finalFee
+    local n = self.durationMonths
+    local r = monthlyInterest
+    monthlyPayment = (pv - fv / ((1 + r) ^ n)) * (r * (1 + r) ^ n) / ((1 + r) ^ n - 1)
 
     return monthlyPayment
 end
 
-function LeaseDeal:getMonthlyPaymentNoInterest()
-    local amountFinanced = self.baseCost - self.deposit
+function LeaseDeal:getMonthlyAmountForSettlement()
+    local amountFinanced = self.baseCost - self.deposit - self.finalFee
     return amountFinanced / self.durationMonths
 end
 
@@ -114,7 +110,7 @@ end
 
 function LeaseDeal:getSettlementCost()
     local remainingMonths = self.durationMonths - self.monthsPaid
-    return (self:getMonthlyPaymentNoInterest() * remainingMonths) + self.finalFee
+    return (self:getMonthlyAmountForSettlement() * remainingMonths) + self.finalFee
 end
 
 function LeaseDeal:paySettlemenCost()

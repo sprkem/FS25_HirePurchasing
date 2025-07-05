@@ -23,7 +23,6 @@
 		<text name="fl_disclaimer_line_one" text="* Payments will be collected automatically and may put you in to arrears."/>
 		<text name="fl_disclaimer_line_two" text="** If you sell the item before the hire purchase deal is complete, you will pay the full outstanding amount."/>
 		<text name="fl_disclaimer_line_three" text="*** The deposit will be taken immediately. Monthly payments begin next month. The final fee is due the month after the last monthly payment."/>
-		
 		<text name="fl_btn_settle_early" text="Settle Early"/>
 		<text name="fl_header_remaining_cost" text="Remaining cost"/>
 		<text name="fl_header_current_deals" text="Current agreements"/>
@@ -31,5 +30,7 @@
 		<text name="fl_header_item_name" text="Item"/>
 		<text name="fl_not_enough_money_settlement" text="You don't have enough money to settle this deal."/>
 		<text name="fl_deal_not_found" text="The deal could not be found. It may have already been settled."/>
+		<text name="fl_confirm_settle_early" text="Are you sure you want to settle? %s will be deducted from your account immediately."/>
+		<text name="fl_settle_early_complete" text="You settled the hire purchase and now own the item outright."/>
 	</texts>
 </l10n>

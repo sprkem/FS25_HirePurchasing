@@ -6,6 +6,11 @@
                 <Bitmap profile="fl_MenuHeaderIcon" size="50px 50px"/>
             </Bitmap>
             <Text profile="fs25_menuHeaderTitle" id="categoryHeaderText" text="$l10n_fl_header_hire_purchasing" size="500px 32px"/>
+            <RoundCorner profile="fs25_shopMoneyBoxBg" id="shopMoneyBoxBg"/>
+			<BoxLayout profile="fs25_shopMoneyBox" id="shopMoneyBox">
+				<Text profile="fs25_shopBalance" text="$l10n_ui_balance:"/>
+				<Text profile="fs25_shopMoney" id="currentBalanceText"/>
+			</BoxLayout>
         </GuiElement>
 
         <GuiElement id="tableContainer">
@@ -13,22 +18,22 @@
             <GuiElement profile="fs25_statisticsHeaderBox" position="0px -40px">
                 <Button profile="fl_Header" position="40px 0px" text="$l10n_fl_header_item_name" handleFocus="false" />
                 <Button profile="fl_Header" position="240px 0px" text="$l10n_fl_header_monthly" handleFocus="false" />
-                <Button profile="fl_Header" position="420px 0px" text="$l10n_fl_header_months_left" handleFocus="false" />
-                <Button profile="fl_Header" position="620px 0px" text="$l10n_fl_header_final_fee" handleFocus="false" />
-                <Button profile="fl_Header" position="740px 0px" text="$l10n_fl_header_remaining_cost" handleFocus="false" />
-                <Button profile="fl_Header" position="920px 0px" text="$l10n_fl_header_settlement_cost" handleFocus="false" />
-                <!-- <Button profile="fl_HeaderRight" position="1010px 0px" size="100px 32px" text="$l10n_ui_header_priority" handleFocus="false" /> -->
+                <Button profile="fl_Header" position="410px 0px" text="$l10n_fl_header_interest" handleFocus="false" />
+                <Button profile="fl_Header" position="550px 0px" text="$l10n_fl_header_months_left" handleFocus="false" />
+                <Button profile="fl_Header" position="750px 0px" text="$l10n_fl_header_final_fee" handleFocus="false" />
+                <Button profile="fl_Header" position="870px 0px" text="$l10n_fl_header_remaining_cost" handleFocus="false" />
+                <Button profile="fl_Header" position="1050px 0px" text="$l10n_fl_header_settlement_cost" handleFocus="false" />
             </GuiElement>
 
             <SmoothList profile="fl_table" id="currentDealsTable" position="0px -80px">
                 <ListItem profile="fl_ListItem">
                     <Text profile="fl_RowCellLeft" position="40px 0px" size="200px 32px" name="item_name"/>
                     <Text profile="fl_RowCellLeft" position="240px 0px" size="200px 32px" name="monthly_cost"/>
-                    <Text profile="fl_RowCellLeft" position="420px 0px" size="400px 32px" name="remaining_months"/>
-                    <Text profile="fl_RowCellLeft" position="620px 0px" size="150px 32px" name="final_fee"/>
-                    <Text profile="fl_RowCellLeft" position="740px 0px" size="100px 32px" name="remaining_cost"/>
-                    <Text profile="fl_RowCellLeft" position="920px 0px" size="120px 32px" name="settlement_cost"/>
-                    <!-- <Text profile="taskListRowCellRight" position="1010px 0px" size="100px 32px" name="settlement_cost"/> -->
+                    <Text profile="fl_RowCellLeft" position="410px 0px" size="400px 32px" name="interest"/>
+                    <Text profile="fl_RowCellLeft" position="550px 0px" size="400px 32px" name="remaining_months"/>
+                    <Text profile="fl_RowCellLeft" position="750px 0px" size="150px 32px" name="final_fee"/>
+                    <Text profile="fl_RowCellLeft" position="870px 0px" size="100px 32px" name="remaining_cost"/>
+                    <Text profile="fl_RowCellLeft" position="1050px 0px" size="120px 32px" name="settlement_cost"/>
                 </ListItem>
             </SmoothList>
 

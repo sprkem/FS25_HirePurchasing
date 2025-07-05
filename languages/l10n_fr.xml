@@ -23,5 +23,14 @@
         <text name="fl_disclaimer_line_one" text="* Les paiements seront collectés automatiquement et peuvent vous mettre en arrière-paiement"/>
         <text name="fl_disclaimer_line_two" text="** Si vous vendez l'item avant que le contrat d'achat avec garantie soit terminé, vous devrez payer le montant total"/>
         <text name="fl_disclaimer_line_three" text="*** La caution sera prise immédiatement. Les paiements mensuels commenceront le mois suivant. Le frais de fin est dû le mois suivant le dernier paiement"/>
+        <text name="fl_btn_settle_early" text="Fixer d'abord"/>
+        <text name="fl_header_remaining_cost" text="Coûts restants"/>
+        <text name="fl_header_current_deals" text="Contrats en cours"/>
+        <text name="fl_header_hire_purchasing" text="Location d'achat"/>
+        <text name="fl_header_item_name" text="Article"/>
+        <text name="fl_not_enough_money_settlement" text="Vous n'avez pas suffisamment d'argent pour settlez ce deal."/>
+        <text name="fl_deal_not_found" text="Le deal n'a pas été trouvé. Il pourrait déjà être clos."/>
+        <text name="fl_confirm_settle_early" text="Voulez-vous vraiment fixer ? %s sera déduit de votre compte immédiatement."/>
+        <text name="fl_settle_early_complete" text="Vous avez fixé le deal et vous possédez désormais l'article intégralement."/>
     </texts>
 </l10n>

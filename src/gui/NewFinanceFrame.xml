@@ -27,7 +27,7 @@
                     <Text profile="fl_dialogText_DetailText" position="0px -320px" text="$l10n_fl_header_total_cost"/>
                 </GuiElement>
                 <GuiElement position="150px 0px">
-                    <Text profile="fl_dialogText_Option_Title" text="$l10n_fl_option_two"/>
+                    <Text profile="fl_dialogText_Option_Title" text="$l10n_fl_option_one"/>
                     <Text profile="fl_dialogText_Option_Value" id="offerOneInterest" position="0px -200px"/>
                     <Text profile="fl_dialogText_Option_Value" id="offerOneMonthly" position="0px -240px"/>
                     <Text profile="fl_dialogText_Option_Value" id="offerOneFinal" position="0px -280px"/>

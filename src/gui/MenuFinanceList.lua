@@ -46,7 +46,6 @@ end
 
 function MenuFinanceList:onFrameClose()
     MenuFinanceList:superClass().onFrameClose(self)
-    -- g_messageCenter:unsubscribeAll(self)
 end
 
 function MenuFinanceList:updateContent()
@@ -59,6 +58,7 @@ function MenuFinanceList:updateContent()
         end
     end
 
+    self.currentBalanceText:setText(g_i18n:formatMoney(playerFarm:getBalance(), 0, true, true))
     if next(self.currentDeals) == nil then
         self.tableContainer:setVisible(false)
         self.noDataContainer:setVisible(true)
@@ -85,6 +85,7 @@ function MenuFinanceList:populateCellForItemInSection(list, section, index, cell
     local deal = self.currentDeals[index]
     cell:getAttribute("item_name"):setText(deal:getVehicle():getName())
     cell:getAttribute("monthly_cost"):setText(g_i18n:formatMoney(deal:getMonthlyPayment(), 0, true, true))
+    cell:getAttribute("interest"):setText(string.format("%.2f%%", deal:getInterestRate() * 100))
     cell:getAttribute("remaining_months"):setText(tostring(deal.durationMonths - deal.monthsPaid))
     cell:getAttribute("final_fee"):setText(g_i18n:formatMoney(deal.finalFee, 0, true, true))
     cell:getAttribute("remaining_cost"):setText(g_i18n:formatMoney(deal:getRemainingCost(), 0, true, true))
@@ -107,21 +108,29 @@ function MenuFinanceList:settleEarly()
         return
     end
 
-    local leaseDeals = g_currentMission.LeasingOptions.leaseDeals
-    local found = false
-    for i, d in ipairs(leaseDeals) do
-        if d == deal then
-            found = true
-            table.remove(leaseDeals, i)
-            break
-        end
-    end
+    YesNoDialog.show(
+        function(self, clickOk)
+            if clickOk then
+                local leaseDeals = g_currentMission.LeasingOptions.leaseDeals
+                local found = false
+                for i, d in ipairs(leaseDeals) do
+                    if d == deal then
+                        found = true
+                        table.remove(leaseDeals, i)
+                        break
+                    end
+                end
 
-    if not found then
-        InfoDialog.show(g_i18n:getText("fl_deal_not_found"))
-        return
-    end
+                if not found then
+                    InfoDialog.show(g_i18n:getText("fl_deal_not_found"))
+                    return
+                end
 
-    deal:paySettlemenCost()
-    self:updateContent()
+                deal:paySettlemenCost()
+                InfoDialog.show(g_i18n:getText("fl_settle_early_complete"))
+                self:updateContent()
+            end
+        end, self,
+        string.format(g_i18n:getText("fl_confirm_settle_early"),
+        g_i18n:formatMoney(deal:getSettlementCost(), 0, true, true)))
 end
