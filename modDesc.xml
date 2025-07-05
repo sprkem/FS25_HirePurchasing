@@ -9,7 +9,7 @@
         <fr>Location-Achat</fr>
     </title>
     <description>
-            <en><![CDATA[Hire Purchasing
+        <en><![CDATA[Hire Purchasing
 
 A mod that adds an option to purchase equipment through a hire purchase model.
 
@@ -18,8 +18,9 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 - Choose from four payment plans, each with different monthly payments and final fees.
 - Settle your agreement early to save on interest costs.
 
-]]></en>		
-    <de><![CDATA[Mietkauf
+]]>
+        </en>
+        <de><![CDATA[Mietkauf
 
 Ein Mod, der eine Option zum Kauf von Ausrüstung über ein Ratenkaufmodell hinzufügt.
 
@@ -28,8 +29,9 @@ Ein Mod, der eine Option zum Kauf von Ausrüstung über ein Ratenkaufmodell hinz
 - Wähle aus vier Zahlungsplänen, jedes mit unterschiedlichen monatlichen Zahlungen und Endgebühren.
 - Setze deinen Vertrag früh ab, um auf Zinskosten zu sparen.
 
-]]></de>	
-    <fr><![CDATA[Location-Achat
+]]>
+        </de>
+        <fr><![CDATA[Location-Achat
 
 Un mod qui ajoute une option d'achat d'équipement via un modèle de location-vente.
 
@@ -37,15 +39,16 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
 - Choisissez la durée de votre accord.
 - Choisissez parmi quatre plans de paiement, chacun avec des paiements mensuels différents et des frais de fin.
 - Régularisez votre accord à l'avance pour économiser sur les coûts d'intérêt.
-]]></fr>	
+]]>
+        </fr>
     </description>
-	<extraSourceFiles>
+    <extraSourceFiles>
         <sourceFile filename="src/LeasingOptions.lua"/>
         <sourceFile filename="src/LeaseDeal.lua"/>
         <sourceFile filename="src/BuyVehicleDataExtension.lua"/>
         <sourceFile filename="src/ShopConfigScreenExtension.lua"/>
         <sourceFile filename="src/VehicleExtension.lua"/>
-        <sourceFile filename="src/gui/NewFinanceFrame.lua"/>        
+        <sourceFile filename="src/gui/NewFinanceFrame.lua"/>
     </extraSourceFiles>
     <multiplayer supported="true"/>
     <l10n filenamePrefix="languages/l10n" />
