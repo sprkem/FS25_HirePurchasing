@@ -63,7 +63,9 @@ function LeaseDeal:getInterestRate()
     local depositRatio = self.deposit / self.baseCost
     local interestRate
 
-    if depositRatio <= 0.11 then
+    if depositRatio <= 0.051 then
+        interestRate = 0.05
+    elseif depositRatio <= 0.11 then
         interestRate = 0.04
     elseif depositRatio <= 0.21 then
         interestRate = 0.035

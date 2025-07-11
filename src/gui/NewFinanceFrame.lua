@@ -38,10 +38,12 @@ function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, to
     end
 
     local potentialDepositOptions = {
+        totalPrice * 0.05,
         totalPrice * 0.1,
         totalPrice * 0.2,
         totalPrice * 0.3,
         totalPrice * 0.4,
+        totalPrice * 0.5,
     }
     self.depositOptions = {}
     for _, amount in pairs(potentialDepositOptions) do

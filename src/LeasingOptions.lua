@@ -58,11 +58,11 @@ end
 function LeasingOptions:loadFromXMLFile()
     if (not g_currentMission:getIsServer()) then return end
 
-    local savegameFolderPath = g_currentMission.missionInfo.savegameDirectory .. "/"
+    local savegameFolderPath = g_currentMission.missionInfo.savegameDirectory;
     if savegameFolderPath == nil then
-        savegameFolderPath = ('%ssavegame%d'):format(getUserProfileAppPath(),
-            g_currentMission.missionInfo.savegameIndex .. "/")
+        savegameFolderPath = ('%ssavegame%d'):format(getUserProfileAppPath(), g_currentMission.missionInfo.savegameIndex)
     end
+    savegameFolderPath = savegameFolderPath .. "/"
 
     local key = "leaseDeals";
 
