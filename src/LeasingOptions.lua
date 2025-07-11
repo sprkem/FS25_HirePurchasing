@@ -6,6 +6,7 @@ source(LeasingOptions.dir .. "src/gui/MenuFinanceList.lua")
 function LeasingOptions:loadMap()
     local newFinanceDialog = NewFinanceFrame.new(g_i18n)
     self.leaseDeals = {}
+    self.forceDeletes = {}
 
     g_gui:loadProfiles(LeasingOptions.dir .. "src/gui/guiProfiles.xml")
 
@@ -99,6 +100,7 @@ function LeasingOptions.periodChanged()
 end
 
 function LeasingOptions.onVehicleSellEvent()
+    print("LeasingOptions.onVehicleSellEvent")
     if g_currentMission.isExitingGame then
         return
     end
