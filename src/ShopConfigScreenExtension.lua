@@ -27,7 +27,7 @@ ShopConfigScreen.setStoreItem = Utils.overwrittenFunction(ShopConfigScreen.setSt
             self.onClickFinance = function()
                 local dialog = g_gui:showDialog("newFinanceFrame")
                 if dialog ~= nil then
-                    dialog.target:setData(storeItem, self.configurations, self.licensePlateData, self.totalPrice, self.saleItem)
+                    dialog.target:setData(storeItem, self.configurations, self.licensePlateData, self.totalPrice, self.saleItem, self.configurationData)
                 end
             end
 

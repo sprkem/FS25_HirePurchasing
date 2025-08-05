@@ -21,12 +21,13 @@ function NewFinanceFrame:init()
     self.depositOptions = nil
     self.offeringIndex = 1
     self.configurations = nil
+    self.configurationData = nil
     self.licensePlateData = nil
     self.totalPrice = 0
     self.saleItem = nil
 end
 
-function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, totalPrice, saleItem)
+function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, totalPrice, saleItem, configurationData)
     -- local xmlFile = loadXMLFile("Temp", "dataS/gui/dialogs/OptionDialog.xml")
     -- saveXMLFileTo(xmlFile, g_currentMission.missionInfo.savegameDirectory .. "/tempUI.xml")
     -- delete(xmlFile);
@@ -64,6 +65,7 @@ function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, to
     self.configurations = configurations
     self.licensePlateData = licensePlateData
     self.saleItem = saleItem
+    self.configurationData = configurationData
 
     local depositTexts = {}
     for _, deposit in pairs(self.depositOptions) do
@@ -179,6 +181,7 @@ function NewFinanceFrame:onClickPurchase(sender)
     event:setPrice(leaseDeal.deposit)
     event:setStoreItem(self.storeItem)
     event:setConfigurations(self.configurations)
+    event:setConfigurationData(self.configurationData)
     event:setLicensePlateData(self.licensePlateData)
     event:setLeaseDeal(leaseDeal)
     event:setSaleItem(self.saleItem)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="100">
     <author>Ozz</author>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
     <iconFilename>icon_HirePurchasing.dds</iconFilename>
     <title>
         <en>Hire Purchasing</en>
@@ -18,6 +18,11 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 - Choose from four payment plans, each with different monthly payments and final fees.
 - Settle your agreement early to save on interest costs.
 
+Changelog:
+
+1.0.0.1:
+- Fix a bug when hire purchasing a vehicle with custom colors from the unlimited color configuation mod
+
 ]]>
         </en>
         <de><![CDATA[Mietkauf
@@ -29,6 +34,11 @@ Ein Mod, der eine Option zum Kauf von Ausrüstung über ein Ratenkaufmodell hinz
 - Wähle aus vier Zahlungsplänen, jedes mit unterschiedlichen monatlichen Zahlungen und Endgebühren.
 - Setze deinen Vertrag früh ab, um auf Zinskosten zu sparen.
 
+Änderungsliste:
+
+1.0.0.1:
+- Behebung eines Fehlers beim Mietkauf eines Fahrzeugs mit benutzerdefinierten Farben aus dem Mod „Unbegrenzte Farbkonfiguration“
+
 ]]>
         </de>
         <fr><![CDATA[Location-Achat
@@ -39,6 +49,12 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
 - Choisissez la durée de votre accord.
 - Choisissez parmi quatre plans de paiement, chacun avec des paiements mensuels différents et des frais de fin.
 - Régularisez votre accord à l'avance pour économiser sur les coûts d'intérêt.
+``
+Journal des modifications:
+
+1.0.0.1:
+- Correction d'un bug lors de la location-vente d'un véhicule avec des couleurs personnalisées grâce au mod de configuration de couleurs illimitées
+
 ]]>
         </fr>
     </description>
