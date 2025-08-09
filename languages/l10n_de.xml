@@ -2,35 +2,35 @@
 <l10n>
     <translationContributors/>
     <texts>
-        <text name="fl_btn_finance" text="Kauf mit Leasing"/>
+        <text name="fl_btn_finance" text="Leasingkauf"/>
         <text name="fl_new_finance_title" text="Neue Finanzierung"/>
-        <text name="fl_choose_deposit" text="Einzahlung wählen"/>
-        <text name="fl_choose_duration" text="Laufzeit wählen"/>
+        <text name="fl_choose_deposit" text="Anzahlung wählen"/>
+        <text name="fl_choose_duration" text="Laufzeit (Jahre) wählen"/>
         <text name="fl_option_one" text="Option 1"/>
         <text name="fl_option_two" text="Option 2"/>
         <text name="fl_option_three" text="Option 3"/>
         <text name="fl_option_four" text="Option 4"/>
-        <text name="fl_header_monthly" text="Monatliche Zahlung"/>
-        <text name="fl_header_final_fee" text="Endgebühr"/>
+        <text name="fl_header_monthly" text="Monatliche Kosten"/>
+        <text name="fl_header_final_fee" text="Abschlusszahlung"/>
         <text name="fl_header_total_cost" text="Gesamtkosten"/>
         <text name="fl_header_interest" text="Zinsen"/>
         <text name="fl_header_settlement_cost" text="Liquidationsgebühr"/>
-        <text name="fl_header_months_left" text="Blaue Zahlen"/>
+        <text name="fl_header_months_left" text="Monate übrig"/>
         <text name="fl_choose_option" text="Wähle die Option für die Finanzierung"/>
-        <text name="fl_not_enough_money_deposit" text="Sie benötigen mindestens %s für die Finanzierung."/>
+        <text name="fl_not_enough_money_deposit" text="Sie benötigen mindestens %s Guthaben für die Finanzierung."/>
         <text name="fl_deal_complete" text="Ihre Finanzierung für %s ist abgeschlossen"/>
-        <text name="fl_deal_complete_early" text="Ihre Finanzierung wurde früh abgeschlossen, weil Sie die Fahrzeug verkauft haben."/>
-        <text name="fl_disclaimer_line_one" text="* Die monatlichen Zahlungen werden automatisch abgeschlossen und können Sie in Schulden bringen."/>
-        <text name="fl_disclaimer_line_two" text="** Wenn Sie das Fahrzeug vor Abschluss der Finanzierung verkaufen, müssen Sie den gesamten Restbetrag zahlen."/>
-        <text name="fl_disclaimer_line_three" text="*** Die Einzahlung wird sofort fällig. Die monatlichen Zahlungen beginnen im nächsten Monat. Die Endgebühr ist im Monat nach dem letzten Zahlungstermin fällig."/>
-        <text name="fl_btn_settle_early" text="Frühzeitig setzen"/>
+        <text name="fl_deal_complete_early" text="Ihre Finanzierung wurde abgebrochen, weil Sie das Fahrzeug verkauft haben."/>
+        <text name="fl_disclaimer_line_one" text="* Die monatlichen Zahlungen werden automatisch eingezogen und können Sie in Schulden bringen."/>
+        <text name="fl_disclaimer_line_two" text="** Wenn Sie das Fahrzeug vor Abschluss der Finanzierung verkaufen, müssen Sie den gesamten Restbetrag sofort begleichen."/>
+        <text name="fl_disclaimer_line_three" text="*** Die Anzahlung wird sofort fällig. Die monatlichen Zahlungen beginnen im nächsten Monat. Die Abschlusszahlung ist im Monat nach dem letzten Zahlungstermin fällig."/>
+        <text name="fl_btn_settle_early" text="Frühzeitig bezahlen"/>
         <text name="fl_header_remaining_cost" text="Verbleibende Kosten"/>
         <text name="fl_header_current_deals" text="Aktuelle Vereinbarungen"/>
-        <text name="fl_header_hire_purchasing" text="Miete kaufen"/>
+        <text name="fl_header_hire_purchasing" text="Finanzieren"/>
         <text name="fl_header_item_name" text="Artikel"/>
-        <text name="fl_not_enough_money_settlement" text="Sie haben nicht genug Geld, um diesen Kauf zu settle."/>
-        <text name="fl_deal_not_found" text="Der Kauf konnte nicht gefunden werden. Er könnte bereits abgeschlossen sein."/>
-        <text name="fl_confirm_settle_early" text="Sind Sie sicher, dass Sie setzen möchten? %s wird sofort von Ihrem Konto abgezogen."/>
-        <text name="fl_settle_early_complete" text="Sie haben den Kauf abgeschlossen und besitzen nun den Artikel vollständig."/>
+        <text name="fl_not_enough_money_settlement" text="Sie haben nicht genug Guthaben, um diese Finanzierung auszuführen."/>
+        <text name="fl_deal_not_found" text="Der Kauf konnte nicht ausgeführt werden. Er könnte bereits abgeschlossen sein."/>
+        <text name="fl_confirm_settle_early" text="Sind Sie sicher, dass Sie die Finanzierung frühzeitig abschließen wollen? %s wird sofort von Ihrem Konto abgezogen."/>
+        <text name="fl_settle_early_complete" text="Sie haben den Kauf abgeschlossen und besitzen nun den gewählten Artikel vollständig."/>
     </texts>
 </l10n>

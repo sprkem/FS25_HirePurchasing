@@ -56,7 +56,15 @@ function LeaseDeal:processMonthly()
 end
 
 function LeaseDeal:getVehicle()
-    return g_currentMission:getObjectByUniqueId(self.vehicle)
+    for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
+        if vehicle.ownerFarmId == g_farmManager:getFarmByUserId(g_currentMission.playerUserId).farmId then
+            if vehicle.uniqueId == self.vehicle then
+                return vehicle
+            end
+        end
+    end
+
+    return nil
 end
 
 function LeaseDeal:getInterestRate()

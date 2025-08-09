@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="100">
     <author>Ozz</author>
-    <version>1.0.0.1</version>
+    <version>1.0.0.2</version>
     <iconFilename>icon_HirePurchasing.dds</iconFilename>
     <title>
         <en>Hire Purchasing</en>
@@ -18,10 +18,16 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 - Choose from four payment plans, each with different monthly payments and final fees.
 - Settle your agreement early to save on interest costs.
 
+Github: https://github.com/sprkem/FS25_HirePurchasing
+
 Changelog:
 
+1.0.0.2:
+- Fix a bug when customizing a vehicle it could consider it sold and settle the hire purchase agreement
+- Update German translation, thanks to redcaptm
+
 1.0.0.1:
-- Fix a bug when hire purchasing a vehicle with custom colors from the unlimited color configuation mod
+- Fix a bug when hire purchasing a vehicle with custom colors from the unlimited color configuation mod preventing save
 
 ]]>
         </en>
@@ -34,10 +40,16 @@ Ein Mod, der eine Option zum Kauf von Ausrüstung über ein Ratenkaufmodell hinz
 - Wähle aus vier Zahlungsplänen, jedes mit unterschiedlichen monatlichen Zahlungen und Endgebühren.
 - Setze deinen Vertrag früh ab, um auf Zinskosten zu sparen.
 
+Github: https://github.com/sprkem/FS25_HirePurchasing
+
 Änderungsliste:
 
+1.0.0.2:
+- Behebung eines Fehlers beim Anpassen eines Fahrzeugs, der dazu führte, dass es als verkauft galt und der Mietkaufvertrag abgewickelt wurde.
+- Aktualisierung der deutschen Übersetzung, danke an redcaptm
+
 1.0.0.1:
-- Behebung eines Fehlers beim Mietkauf eines Fahrzeugs mit benutzerdefinierten Farben aus dem Mod „Unbegrenzte Farbkonfiguration“
+- Behebung eines Fehlers beim Mietkauf eines Fahrzeugs mit benutzerdefinierten Farben aus dem Mod „Unbegrenzte Farbkonfiguration“, der das Speichern verhinderte.
 
 ]]>
         </de>
@@ -49,11 +61,17 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
 - Choisissez la durée de votre accord.
 - Choisissez parmi quatre plans de paiement, chacun avec des paiements mensuels différents et des frais de fin.
 - Régularisez votre accord à l'avance pour économiser sur les coûts d'intérêt.
-``
+
+Github: https://github.com/sprkem/FS25_HirePurchasing
+
 Journal des modifications:
 
+1.0.0.2:
+- Correction d'un bug lors de la personnalisation d'un véhicule: celui-ci était considéré comme vendu et le contrat de location-vente était résilié.
+- Mise à jour de la traduction allemande, merci à redcaptm
+
 1.0.0.1:
-- Correction d'un bug lors de la location-vente d'un véhicule avec des couleurs personnalisées grâce au mod de configuration de couleurs illimitées
+- Correction d'un bug lors de la location-vente d'un véhicule avec des couleurs personnalisées grâce au mod de configuration de couleurs illimitées, empêchant la sauvegarde.
 
 ]]>
         </fr>
