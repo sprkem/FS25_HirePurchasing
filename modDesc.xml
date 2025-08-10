@@ -25,6 +25,7 @@ Changelog:
 1.0.0.3
 - Fix the mod for multiplayer
 - No longer shows hire purchase button when customising
+- Add Brazilian translation, thanks to Onicaro
 
 1.0.0.2:
 - Fix a bug when customizing a vehicle it could consider it sold and settle the hire purchase agreement
@@ -48,6 +49,11 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Änderungsliste:
 
+1.0.0.3
+- Mod für Mehrspielermodus reparieren
+- Beim Anpassen wird die Schaltfläche für den Ratenkauf nicht mehr angezeigt
+- Brasilianische Übersetzung hinzugefügt, danke an Onicaro
+
 1.0.0.2:
 - Behebung eines Fehlers beim Anpassen eines Fahrzeugs, der dazu führte, dass es als verkauft galt und der Mietkaufvertrag abgewickelt wurde.
 - Aktualisierung der deutschen Übersetzung, danke an redcaptm
@@ -69,6 +75,11 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Journal des modifications:
+
+1.0.0.3
+- Correction du mod multijoueur
+- Le bouton de location-vente n'apparaît plus lors de la personnalisation
+- Ajout de la traduction en brésilien, grâce à Onicaro
 
 1.0.0.2:
 - Correction d'un bug lors de la personnalisation d'un véhicule: celui-ci était considéré comme vendu et le contrat de location-vente était résilié.
