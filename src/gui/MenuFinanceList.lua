@@ -53,6 +53,7 @@ function MenuFinanceList:updateContent()
     local playerFarm = g_farmManager:getFarmByUserId(g_currentMission.playerUserId)
 
     for _, leaseDeal in pairs(g_currentMission.LeasingOptions.leaseDeals) do
+        print("Checking lease deal for farm id: " .. leaseDeal.farmId .. " against player farm id: " .. playerFarm.farmId)
         if leaseDeal.farmId == playerFarm.farmId and leaseDeal:getVehicle() ~= nil then
             table.insert(self.currentDeals, leaseDeal)
         end

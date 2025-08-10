@@ -27,10 +27,21 @@ ShopConfigScreen.setStoreItem = Utils.overwrittenFunction(ShopConfigScreen.setSt
             self.onClickFinance = function()
                 local dialog = g_gui:showDialog("newFinanceFrame")
                 if dialog ~= nil then
-                    dialog.target:setData(storeItem, self.configurations, self.licensePlateData, self.totalPrice, self.saleItem, self.configurationData)
+                    dialog.target:setData(storeItem, self.configurations, self.licensePlateData, self.totalPrice,
+                        self.saleItem, self.configurationData)
                 end
             end
 
             dealsButton.onClickCallback = self.onClickFinance
         end
     end)
+
+ShopConfigScreenExtension = {}
+
+function ShopConfigScreenExtension:updateButtons(storeItem, vehicle, saleItem)
+    if self.dealsButton then
+        self.dealsButton:setVisible(vehicle == nil)
+    end
+end
+
+ShopConfigScreen.updateButtons = Utils.prependedFunction(ShopConfigScreen.updateButtons, ShopConfigScreenExtension.updateButtons)
