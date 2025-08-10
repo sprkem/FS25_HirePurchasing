@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<translationContributors Brazilian Porguese - Onicaro (Ícaro Garcia)/>
+	<texts>
+		<text name="fl_btn_finance" text="FINANCIAMENTO"/>
+		<text name="fl_new_finance_title" text="Novo financiamento"/>
+		<text name="fl_choose_deposit" text="Escolha um valor para depositar"/>
+		<text name="fl_choose_duration" text="Selecione a duração do financiamento em anos"/>
+		<text name="fl_option_one" text="Opção um"/>
+		<text name="fl_option_two" text="Opção dois"/>
+		<text name="fl_option_three" text="Opção três"/>
+		<text name="fl_option_four" text="Opção quatro"/>
+		<text name="fl_header_monthly" text="Custo mensal"/>
+		<text name="fl_header_final_fee" text="Taxa final"/>
+		<text name="fl_header_total_cost" text="Custo final"/>
+		<text name="fl_header_interest" text="Taxa de juro"/>
+		<text name="fl_header_settlement_cost" text="Custo de liquidação"/>
+		<text name="fl_header_months_left" text="Meses restantes"/>
+		<text name="fl_choose_option" text="Escolha com qual opção comprar"/>
+		<text name="fl_not_enough_money_deposit" text="Você precisa de um depósito de pelo menos %s para financiar este item."/>
+		<text name="fl_deal_complete" text="Seu financiamento para %s foi encerrado."/>
+		<text name="fl_deal_complete_early" text="Seu financiamento foi encerrado porque você vendeu o veículo."/>
+		<text name="fl_disclaimer_line_one" text="* Os pagamentos serão cobrados automaticamente e podem colocar você em dívida."/>
+		<text name="fl_disclaimer_line_two" text="** Se você vender o item antes da conclusão do financiamento, você pagará o valor total pendente."/>
+		<text name="fl_disclaimer_line_three" text="*** O depósito será cobrado imediatamente. Os pagamentos mensais começam no mês seguinte. A taxa final vence no mês seguinte ao último pagamento mensal."/>
+		<text name="fl_btn_settle_early" text="Renegociar"/>
+		<text name="fl_header_remaining_cost" text="Custo restante"/>
+		<text name="fl_header_current_deals" text="Acordos atuais"/>
+		<text name="fl_header_hire_purchasing" text="Financiamento"/>
+		<text name="fl_header_item_name" text="Item"/>
+		<text name="fl_not_enough_money_settlement" text="Você não tem dinheiro suficiente para acertar este acordo.."/>
+		<text name="fl_deal_not_found" text="O acordo não foi encontrado. Talvez já tenha sido liquidado."/>
+		<text name="fl_confirm_settle_early" text="Tem certeza de que deseja liquidar esse financiamento? %s será deduzido da sua conta imediatamente."/>
+		<text name="fl_settle_early_complete" text="O financiamento foi liquidado e agora você é o proprietário do item."/>
+	</texts>
+</l10n>
