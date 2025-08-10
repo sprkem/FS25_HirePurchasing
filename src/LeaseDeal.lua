@@ -22,9 +22,9 @@ function LeaseDeal.new(dealType, baseCost, deposit, durationMonths, finalFee, mo
     self.durationMonths = durationMonths
     self.finalFee = finalFee
     self.monthsPaid = monthsPaid
-    self.vehicle = "" -- used temporarily before objectid is lazily set post load
+    self.vehicle = "" -- used on the server to identify vehicles
     self.farmId = -1
-    self.objectId = -1
+    self.objectId = -1 -- used on the client to identify vehicles
 
     return self
 end
