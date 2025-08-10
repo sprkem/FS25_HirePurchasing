@@ -6,6 +6,7 @@ source(LeasingOptions.dir .. "src/gui/MenuFinanceList.lua")
 function LeasingOptions:loadMap()
     local newFinanceDialog = NewFinanceFrame.new(g_i18n)
     self.leaseDeals = {}
+    self.uniqueIdToObjectIds = {}
 
     g_gui:loadProfiles(LeasingOptions.dir .. "src/gui/guiProfiles.xml")
 
@@ -25,6 +26,21 @@ end
 
 function LeasingOptions:makeCheckEnabledPredicate()
     return function() return true end
+end
+
+-- When customised the object id can change. In a mp scenario we need clients to be notified of the new id
+function LeasingOptions:checkObjectIds()
+    if (not g_currentMission:getIsServer()) then return end
+    for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
+        local currentObjectId = NetworkUtil.getObjectId(vehicle)
+        local existingObjectId = self.uniqueIdToObjectIds[vehicle.uniqueId]
+
+        if existingObjectId and existingObjectId ~= currentObjectId then
+            g_client:getServerConnection():sendEvent(ObjectIdChangedEvent.new(existingObjectId, currentObjectId))
+        end
+
+        self.uniqueIdToObjectIds[vehicle.uniqueId] = currentObjectId
+    end
 end
 
 function LeasingOptions:registerLeaseDeal(leaseDeal)
@@ -98,10 +114,16 @@ function LeasingOptions.periodChanged()
     end
 end
 
+function LeasingOptions.onVehicleResetEvent()
+    g_currentMission.LeasingOptions:checkObjectIds()
+end
+
 function LeasingOptions.onVehicleSellEvent()
+    if (not g_currentMission:getIsServer()) then return end
     if g_currentMission.isExitingGame then
         return
     end
+    g_currentMission.LeasingOptions:checkObjectIds()
 
     local timer = Timer.new(2000)
     timer:setFinishCallback(function()
@@ -122,6 +144,14 @@ function LeasingOptions.onVehicleSellEvent()
         timer:stop()
     end)
     timer:start()
+end
+
+function LeasingOptions:sendInitialClientState(connection, user, farm)
+    connection:sendEvent(InitialClientStateEvent.new())
+end
+
+function LeasingOptions:currentMissionStarted()
+    g_currentMission.LeasingOptions:checkObjectIds()
 end
 
 -- from Courseplay
@@ -186,5 +216,11 @@ end
 
 g_messageCenter:subscribe(MessageType.PERIOD_CHANGED, LeasingOptions.periodChanged)
 g_messageCenter:subscribe(MessageType.VEHICLE_REMOVED, LeasingOptions.onVehicleSellEvent)
+g_messageCenter:subscribe(MessageType.VEHICLE_RESET, LeasingOptions.onVehicleResetEvent)
+g_messageCenter:subscribe(MessageType.CURRENT_MISSION_START, LeasingOptions.currentMissionStarted)
+
 FSBaseMission.saveSavegame = Utils.appendedFunction(FSBaseMission.saveSavegame, LeasingOptions.saveToXmlFile)
+FSBaseMission.sendInitialClientState = Utils.appendedFunction(FSBaseMission.sendInitialClientState,
+    LeasingOptions.sendInitialClientState)
+
 addModEventListener(LeasingOptions)

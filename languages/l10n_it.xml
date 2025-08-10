@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+    <translationContributors/>
+    <texts>
+        <text name="fl_btn_finance" text="ACQUISTO A RATE"/>
+        <text name="fl_new_finance_title" text="Nuovo contratto di acquisto a rate"/>
+        <text name="fl_choose_deposit" text="Scegli un importo da depositare"/>
+        <text name="fl_choose_duration" text="Scegli la durata del contratto in anni"/>
+        <text name="fl_option_one" text="Opzione uno"/>
+        <text name="fl_option_two" text="Opzione due"/>
+        <text name="fl_option_three" text="Opzione tre"/>
+        <text name="fl_option_four" text="Opzione quattro"/>
+        <text name="fl_header_monthly" text="Costo mensile"/>
+        <text name="fl_header_final_fee" text="Costo finale"/>
+        <text name="fl_header_total_cost" text="Costo totale"/>
+        <text name="fl_header_interest" text="Interessi"/>
+        <text name="fl_header_settlement_cost" text="Costo di liquidazione"/>
+        <text name="fl_header_months_left" text="Mesi rimanenti"/>
+        <text name="fl_choose_option" text="Scegli con quale opzione acquistare"/>
+        <text name="fl_not_enough_money_deposit" text="È necessario un deposito di almeno %s per acquistare a rate questo articolo."/>
+        <text name="fl_deal_complete" text="Il tuo contratto di acquisto a rate per %s è terminato."/>
+        <text name="fl_deal_complete_early" text="Il tuo contratto di acquisto a rate è stato risolto perché hai venduto il veicolo."/>
+        <text name="fl_disclaimer_line_one" text="* I pagamenti saranno riscossi automaticamente e potrebbero comportare un ritardo nel pagamento."/>
+        <text name="fl_disclaimer_line_two" text="** Se vendi l'oggetto prima della conclusione del contratto di acquisto rateale, pagherai l'intero importo dovuto."/>
+        <text name="fl_disclaimer_line_three" text="*** L'acconto verrà prelevato immediatamente. Le rate mensili inizieranno il mese successivo. Il pagamento finale è dovuto il mese successivo all'ultima rata mensile."/>
+        <text name="fl_btn_settle_early" text="Salda anticipatamente"/>
+        <text name="fl_header_remaining_cost" text="Costo residuo"/>
+        <text name="fl_header_current_deals" text="Contratti in corso"/>
+        <text name="fl_header_hire_purchasing" text="Acquisto rateale"/>
+        <text name="fl_header_item_name" text="Articolo"/>
+        <text name="fl_not_enough_money_settlement" text="Non hai abbastanza soldi per concludere questo affare."/>
+        <text name="fl_deal_not_found" text="Impossibile trovare l'affare. Potrebbe essere già stato concluso."/>
+        <text name="fl_confirm_settle_early" text="Sei sicuro di voler concludere? %s verrà detratto immediatamente dal tuo conto."/>
+        <text name="fl_settle_early_complete" text="Hai concluso l'acquisto rateale e ora sei il proprietario assoluto dell'oggetto."/>
+    </texts>
+</l10n>

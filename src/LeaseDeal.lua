@@ -5,6 +5,11 @@ LeaseDeal.TYPE = {
     HIRE_PURCHASE = 1
 }
 
+LeaseDeal.GET_VEHICLE_METHOD = {
+    UNIQUE_ID = 1,
+    OBJECT_ID = 2
+}
+
 LeaseDeal.MAX_MISSED_PAYMENTS = 3
 
 function LeaseDeal.new(dealType, baseCost, deposit, durationMonths, finalFee, monthsPaid)
@@ -17,8 +22,9 @@ function LeaseDeal.new(dealType, baseCost, deposit, durationMonths, finalFee, mo
     self.durationMonths = durationMonths
     self.finalFee = finalFee
     self.monthsPaid = monthsPaid
-    self.vehicle = ""
+    self.vehicle = "" -- used on the server to identify vehicles
     self.farmId = -1
+    self.objectId = -1 -- used on the client to identify vehicles
 
     return self
 end
@@ -55,10 +61,40 @@ function LeaseDeal:processMonthly()
     return false
 end
 
-function LeaseDeal:getVehicle()
-    for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
-        if vehicle.ownerFarmId == g_farmManager:getFarmByUserId(g_currentMission.playerUserId).farmId then
+function LeaseDeal:getObjectId()
+    -- Lazy load the objectId
+    if self.objectId == -1 then
+        -- Should only happen on the server or in singleplayer
+        for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
             if vehicle.uniqueId == self.vehicle then
+                self.objectId = NetworkUtil.getObjectId(vehicle)
+                break
+            end
+        end
+    end
+    return self.objectId
+end
+
+function LeaseDeal:getVehicle()
+    local getMethod = LeaseDeal.GET_VEHICLE_METHOD.OBJECT_ID
+    if g_currentMission:getIsServer() then
+        getMethod = LeaseDeal.GET_VEHICLE_METHOD.UNIQUE_ID
+        if self.vehicle == "" then
+            local object = NetworkUtil.getObject(self:getObjectId())
+            if object == nil then
+                return nil
+            end
+            self.vehicle = object.uniqueId
+        end
+    end
+
+    for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
+        if getMethod == LeaseDeal.GET_VEHICLE_METHOD.UNIQUE_ID then
+            if vehicle.uniqueId == self.vehicle then
+                return vehicle
+            end
+        elseif getMethod == LeaseDeal.GET_VEHICLE_METHOD.OBJECT_ID then
+            if NetworkUtil.getObjectId(vehicle) == self:getObjectId() then
                 return vehicle
             end
         end
@@ -138,8 +174,9 @@ function LeaseDeal:writeStream(streamId, connection)
     streamWriteInt32(streamId, self.durationMonths)
     streamWriteInt32(streamId, self.finalFee)
     streamWriteInt32(streamId, self.monthsPaid)
-    streamWriteString(streamId, self.vehicle)
     streamWriteInt32(streamId, self.farmId)
+    streamWriteInt32(streamId, self:getObjectId())
+    streamWriteString(streamId, self.vehicle)
 end
 
 function LeaseDeal:readStream(streamId, connection)
@@ -149,8 +186,9 @@ function LeaseDeal:readStream(streamId, connection)
     self.durationMonths = streamReadInt32(streamId)
     self.finalFee = streamReadInt32(streamId)
     self.monthsPaid = streamReadInt32(streamId)
-    self.vehicle = streamReadString(streamId)
     self.farmId = streamReadInt32(streamId)
+    self.objectId = streamReadInt32(streamId)
+    self.vehicle = streamReadString(streamId)
 end
 
 function LeaseDeal:saveToXmlFile(xmlFile, key)
@@ -160,7 +198,7 @@ function LeaseDeal:saveToXmlFile(xmlFile, key)
     setXMLInt(xmlFile, key .. "#durationMonths", self.durationMonths)
     setXMLInt(xmlFile, key .. "#finalFee", self.finalFee)
     setXMLInt(xmlFile, key .. "#monthsPaid", self.monthsPaid)
-    setXMLString(xmlFile, key .. "#vehicle", self.vehicle)
+    setXMLString(xmlFile, key .. "#vehicle", NetworkUtil.getObject(self:getObjectId()).uniqueId)
     setXMLInt(xmlFile, key .. "#farmId", self.farmId)
 end
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="100">
     <author>Ozz</author>
-    <version>1.0.0.2</version>
+    <version>1.0.0.3</version>
     <iconFilename>icon_HirePurchasing.dds</iconFilename>
     <title>
         <en>Hire Purchasing</en>
@@ -21,6 +21,12 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Changelog:
+
+1.0.0.3
+- Fix the mod for multiplayer
+- No longer shows hire purchase button when customising
+- Add Brazilian translation, thanks to Onicaro
+- Add Italian translation, thanks to FirenzeIT
 
 1.0.0.2:
 - Fix a bug when customizing a vehicle it could consider it sold and settle the hire purchase agreement
@@ -44,6 +50,11 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Änderungsliste:
 
+1.0.0.3
+- Mod für Mehrspielermodus reparieren
+- Beim Anpassen wird die Schaltfläche für den Ratenkauf nicht mehr angezeigt
+- Brasilianische Übersetzung hinzugefügt, danke an Onicaro
+
 1.0.0.2:
 - Behebung eines Fehlers beim Anpassen eines Fahrzeugs, der dazu führte, dass es als verkauft galt und der Mietkaufvertrag abgewickelt wurde.
 - Aktualisierung der deutschen Übersetzung, danke an redcaptm
@@ -66,6 +77,11 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Journal des modifications:
 
+1.0.0.3
+- Correction du mod multijoueur
+- Le bouton de location-vente n'apparaît plus lors de la personnalisation
+- Ajout de la traduction en brésilien, grâce à Onicaro
+
 1.0.0.2:
 - Correction d'un bug lors de la personnalisation d'un véhicule: celui-ci était considéré comme vendu et le contrat de location-vente était résilié.
 - Mise à jour de la traduction allemande, merci à redcaptm
@@ -77,12 +93,15 @@ Journal des modifications:
         </fr>
     </description>
     <extraSourceFiles>
-        <sourceFile filename="src/LeasingOptions.lua"/>
-        <sourceFile filename="src/LeaseDeal.lua"/>
         <sourceFile filename="src/BuyVehicleDataExtension.lua"/>
+        <sourceFile filename="src/LeaseDeal.lua"/>
+        <sourceFile filename="src/LeasingOptions.lua"/>
         <sourceFile filename="src/ShopConfigScreenExtension.lua"/>
         <sourceFile filename="src/VehicleExtension.lua"/>
         <sourceFile filename="src/gui/NewFinanceFrame.lua"/>
+        <sourceFile filename="src/events/InitialClientStateEvent.lua"/>
+        <sourceFile filename="src/events/NewLeaseDealEvent.lua"/>
+        <sourceFile filename="src/events/ObjectIdChangedEvent.lua"/>
     </extraSourceFiles>
     <multiplayer supported="true"/>
     <l10n filenamePrefix="languages/l10n" />
