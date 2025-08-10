@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <l10n>
-	<translationContributors Brazilian Porguese - Onicaro (Ícaro Garcia)/>
+	<translationContributors/>
 	<texts>
 		<text name="fl_btn_finance" text="FINANCIAMENTO"/>
 		<text name="fl_new_finance_title" text="Novo financiamento"/>
