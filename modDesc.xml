@@ -26,6 +26,7 @@ Changelog:
 - Fix the mod for multiplayer
 - No longer shows hire purchase button when customising
 - Add Brazilian translation, thanks to Onicaro
+- Add Italian translation, thanks to FirenzeIT
 
 1.0.0.2:
 - Fix a bug when customizing a vehicle it could consider it sold and settle the hire purchase agreement
