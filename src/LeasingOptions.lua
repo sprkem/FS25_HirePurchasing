@@ -30,13 +30,12 @@ end
 
 -- When customised the object id can change. In a mp scenario we need clients to be notified of the new id
 function LeasingOptions:checkObjectIds()
+    if (not g_currentMission:getIsServer()) then return end
     for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
         local currentObjectId = NetworkUtil.getObjectId(vehicle)
         local existingObjectId = self.uniqueIdToObjectIds[vehicle.uniqueId]
 
         if existingObjectId and existingObjectId ~= currentObjectId then
-            print(string.format("LeasingOptions:checkObjectIds: Vehicle ID changed for %s: %d -> %d",
-                vehicle.uniqueId, existingObjectId, currentObjectId))
             g_client:getServerConnection():sendEvent(ObjectIdChangedEvent.new(existingObjectId, currentObjectId))
         end
 
@@ -45,7 +44,6 @@ function LeasingOptions:checkObjectIds()
 end
 
 function LeasingOptions:registerLeaseDeal(leaseDeal)
-    print("LeasingOptions:registerLeaseDeal called")
     -- Note currently used by load xml and on new leaseDeals
     table.insert(self.leaseDeals, leaseDeal)
 end

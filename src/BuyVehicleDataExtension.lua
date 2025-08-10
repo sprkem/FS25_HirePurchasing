@@ -25,6 +25,7 @@ function BuyVehicleDataExtension.onBought(buyVehicleData, loadedVehicles, loadin
         for _, vehicle in loadedVehicles do
             if buyVehicleData.leaseDeal ~= nil then
                 buyVehicleData.leaseDeal.objectId = NetworkUtil.getObjectId(vehicle)
+                buyVehicleData.leaseDeal.vehicle = vehicle.uniqueId
                 g_client:getServerConnection():sendEvent(NewLeaseDealEvent.new(buyVehicleData.leaseDeal))
                 break
             end

@@ -93,9 +93,9 @@ Journal des modifications:
         </fr>
     </description>
     <extraSourceFiles>
-        <sourceFile filename="src/LeasingOptions.lua"/>
-        <sourceFile filename="src/LeaseDeal.lua"/>
         <sourceFile filename="src/BuyVehicleDataExtension.lua"/>
+        <sourceFile filename="src/LeaseDeal.lua"/>
+        <sourceFile filename="src/LeasingOptions.lua"/>
         <sourceFile filename="src/ShopConfigScreenExtension.lua"/>
         <sourceFile filename="src/VehicleExtension.lua"/>
         <sourceFile filename="src/gui/NewFinanceFrame.lua"/>

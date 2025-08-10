@@ -32,4 +32,5 @@ function NewLeaseDealEvent:run(connection)
     end
 
     g_currentMission.LeasingOptions:registerLeaseDeal(self.leaseDeal)
+    g_currentMission.LeasingOptions:checkObjectIds()
 end

@@ -79,6 +79,13 @@ function LeaseDeal:getVehicle()
     local getMethod = LeaseDeal.GET_VEHICLE_METHOD.OBJECT_ID
     if g_currentMission:getIsServer() then
         getMethod = LeaseDeal.GET_VEHICLE_METHOD.UNIQUE_ID
+        if self.vehicle == "" then
+            local object = NetworkUtil.getObject(self:getObjectId())
+            if object == nil then
+                return nil
+            end
+            self.vehicle = object.uniqueId
+        end
     end
 
     for _, vehicle in pairs(g_currentMission.vehicleSystem.vehicles) do
@@ -169,6 +176,7 @@ function LeaseDeal:writeStream(streamId, connection)
     streamWriteInt32(streamId, self.monthsPaid)
     streamWriteInt32(streamId, self.farmId)
     streamWriteInt32(streamId, self:getObjectId())
+    streamWriteString(streamId, self.vehicle)
 end
 
 function LeaseDeal:readStream(streamId, connection)
@@ -180,6 +188,7 @@ function LeaseDeal:readStream(streamId, connection)
     self.monthsPaid = streamReadInt32(streamId)
     self.farmId = streamReadInt32(streamId)
     self.objectId = streamReadInt32(streamId)
+    self.vehicle = streamReadString(streamId)
 end
 
 function LeaseDeal:saveToXmlFile(xmlFile, key)
