@@ -83,6 +83,10 @@ function NewFinanceFrame:setData(storeItem, configurations, licensePlateData, to
     end
     self.durationOption:setTexts(durationTexts)
 
+    self.depositOption:setState(1)
+    self.durationOption:setState(1)
+    self.offerOption:setState(1)
+
     self:updateView()
 end
 
