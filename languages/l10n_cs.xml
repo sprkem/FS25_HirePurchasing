@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<translationContributors/>
+	<texts>
+		<text name="fl_btn_finance" text="分期购买"/>
+		<text name="fl_new_finance_title" text="新建分期购买协议"/>
+		<text name="fl_choose_deposit" text="选择首付金额"/>
+		<text name="fl_choose_duration" text="选择协议年限"/>
+		<text name="fl_option_one" text="选项一"/>
+		<text name="fl_option_two" text="选项二"/>
+		<text name="fl_option_three" text="选项三"/>
+		<text name="fl_option_four" text="选项四"/>
+		<text name="fl_header_monthly" text="月付金额"/>
+		<text name="fl_header_final_fee" text="尾款"/>
+		<text name="fl_header_total_cost" text="总成本"/>
+		<text name="fl_header_interest" text="利率"/>
+		<text name="fl_header_settlement_cost" text="结清费用"/>
+		<text name="fl_header_months_left" text="剩余月数"/>
+		<text name="fl_choose_option" text="选择购买方案"/>
+		<text name="fl_not_enough_money_deposit" text="您需要至少 %s 的首付才能分期购买此物品。"/>
+		<text name="fl_deal_complete" text="您为 %s 办理的分期购买协议已完成。"/>
+		<text name="fl_deal_complete_early" text="由于您出售了载具，分期购买协议已提前结清。"/>
+		<text name="fl_disclaimer_line_one" text="* 款项将自动收取，可能导致您欠款。"/>
+		<text name="fl_disclaimer_line_two" text="** 如果您在分期购买协议完成前出售物品，需支付全部未付金额。"/>
+		<text name="fl_disclaimer_line_three" text="*** 首付将立即扣除。月付从下个月开始。尾款需在最后一次月付后的下个月支付。"/>
+		<text name="fl_btn_settle_early" text="提前结清"/>
+		<text name="fl_header_remaining_cost" text="剩余费用"/>
+		<text name="fl_header_current_deals" text="当前协议"/>
+		<text name="fl_header_hire_purchasing" text="分期购买"/>
+		<text name="fl_header_item_name" text="物品"/>
+		<text name="fl_not_enough_money_settlement" text="您没有足够的资金结清此协议。"/>
+		<text name="fl_deal_not_found" text="未找到该协议，可能已被结清。"/>
+		<text name="fl_confirm_settle_early" text="确定要结清吗？%s 将立即从您的账户扣除。"/>
+		<text name="fl_settle_early_complete" text="您已结清分期购买，现完全拥有该物品。"/>
+	</texts>
+</l10n>
