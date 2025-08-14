@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="100">
     <author>Ozz</author>
-    <version>1.0.0.4</version>
+    <version>1.0.0.5</version>
     <iconFilename>icon_HirePurchasing.dds</iconFilename>
     <title>
         <en>Hire Purchasing</en>
@@ -21,6 +21,12 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Changelog:
+
+1.0.0.5
+- Add Turkish translation, thanks to Cyber-Syntax
+- Add Spanish translation, thanks to Daniel86ESP
+- Add Chinese translation, thanks to NongDeChuanRen
+- Add Polish translation, thanks to 00-Mario-00
 
 1.0.0.4
 - Reset choices to defaults when opening the dialog. Before, previously selected choices were carried forward.
@@ -53,6 +59,12 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Änderungsliste:
 
+1.0.0.5
+- Türkische Übersetzung hinzugefügt (dank Cyber-Syntax)
+- Spanische Übersetzung hinzugefügt (dank Daniel86ESP)
+- Chinesische Übersetzung hinzugefügt (dank NongDeChuanRen)
+- Polnische Übersetzung hinzugefügt (dank 00-Mario-00)
+
 1.0.0.4
 - Auswahlmöglichkeiten werden beim Öffnen des Dialogs auf die Standardwerte zurückgesetzt. Zuvor wurden zuvor ausgewählte Optionen übernommen.
 
@@ -82,6 +94,12 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Journal des modifications:
+
+1.0.0.5
+- Ajout de la traduction turque, grâce à Cyber-Syntax
+- Ajout de la traduction espagnole, grâce à Daniel86ESP
+- Ajout de la traduction chinoise, grâce à NongDeChuanRen
+- Ajout de la traduction polonaise, grâce à 00-Mario-00
 
 1.0.0.4
 - Réinitialisation des choix aux valeurs par défaut lors de l'ouverture de la boîte de dialogue. Auparavant, les choix précédemment sélectionnés étaient conservés.

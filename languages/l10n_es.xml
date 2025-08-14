@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<translationContributors/>
+	<texts>
+		<text name="fl_btn_finance" text="Financiar"/>
+		<text name="fl_new_finance_title" text="Nuevo acuerdo de compra a plazos"/>
+		<text name="fl_choose_deposit" text="Elija una cantidad para depositar"/>
+		<text name="fl_choose_duration" text="Seleccione la duración de la financiacion en años"/>
+		<text name="fl_option_one" text="Opcion uno"/>
+		<text name="fl_option_two" text="Opcion dos"/>
+		<text name="fl_option_three" text="Opcion tres"/>
+		<text name="fl_option_four" text="Opcion cuatro"/>
+		<text name="fl_header_monthly" text="Coste Mensual"/>
+		<text name="fl_header_final_fee" text="Tarifa final"/>
+		<text name="fl_header_total_cost" text="Precio total"/>
+		<text name="fl_header_interest" text="Tasa de interes"/>
+		<text name="fl_header_settlement_cost" text="Costo de liquidacion"/>
+		<text name="fl_header_months_left" text="Meses restantes"/>
+		<text name="fl_choose_option" text="Elige con que opcion comprar"/>
+		<text name="fl_not_enough_money_deposit" text="Necesita al menos %s de deposito para comprar a plazos este articulo."/>
+		<text name="fl_deal_complete" text="Su contrato de compra a plazos por valor de %s ha finalizado."/>
+		<text name="fl_deal_complete_early" text="Su contrato de compra a plazos se liquido porque vendio el vehiculo."/>
+		<text name="fl_disclaimer_line_one" text="* Los pagos se cobraran automaticamente y podrian ocasionarle atrasos."/>
+		<text name="fl_disclaimer_line_two" text="** Si vende el articulo antes de que se complete el contrato de compra a plazos, debera pagar el importe total pendiente."/>
+		<text name="fl_disclaimer_line_three" text="*** El deposito se tomara de inmediato. Los pagos mensuales comienzan el proximo mes. El pago final vence el mes posterior al ultimo pago mensual."/>
+		<text name="fl_btn_settle_early" text="Liquidacion temprana"/>
+		<text name="fl_header_remaining_cost" text="Liquidacion temprana"/>
+		<text name="fl_header_current_deals" text="Acuerdos vigentes"/>
+		<text name="fl_header_hire_purchasing" text="Compra a plazos"/>
+		<text name="fl_header_item_name" text="Articulo"/>
+		<text name="fl_not_enough_money_settlement" text="No tienes suficiente dinero para cerrar este trato."/>
+		<text name="fl_deal_not_found" text="No se pudo encontrar el acuerdo. Es posible que ya se haya cerrado."/>
+		<text name="fl_confirm_settle_early" text="¿Estas seguro de que deseas liquidar? %s Se deducira de tu cuenta inmediatamente."/>
+		<text name="fl_settle_early_complete" text="Usted liquido la compra a plazos y ahora es dueño absoluto del articulo."/>
+	</texts>
+</l10n>
