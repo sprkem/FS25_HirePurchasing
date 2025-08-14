@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<l10n>
+	<translationContributors/>
+	<texts>
+		<text name="fl_btn_finance" text="TAKSİT"/>
+		<text name="fl_new_finance_title" text="Yeni taksit anlaşması"/>
+		<text name="fl_choose_deposit" text="Depozito tutarı seçin"/>
+		<text name="fl_choose_duration" text="Anlaşmanın uzunluğunu yıl olarak seçin"/>
+		<text name="fl_option_one" text="Birinci opsiyon"/>
+		<text name="fl_option_two" text="İkinci opsiyon"/>
+		<text name="fl_option_three" text="Üçüncü opsiyon"/>
+		<text name="fl_option_four" text="Dördüncü opsiyon"/>
+		<text name="fl_header_monthly" text="Aylık maliyet"/>
+		<text name="fl_header_final_fee" text="Son ücret"/>
+		<text name="fl_header_total_cost" text="Toplam maliyet"/>
+		<text name="fl_header_interest" text="Faiz oranı"/>
+		<text name="fl_header_settlement_cost" text="Uzlaşma maliyeti"/>
+		<text name="fl_header_months_left" text="Kalan aylar"/>
+		<text name="fl_choose_option" text="Hangi opsiyonla satın almak istediğinizi seçin"/>
+		<text name="fl_not_enough_money_deposit" text="Bu eşyayı taksitlemek için en az %s depozito gerekmektedir."/>
+		<text name="fl_deal_complete" text="%s için taksit anlaşmanız sona erdi."/>
+		<text name="fl_deal_complete_early" text="Aracı sattığınız için taksit anlaşmanız sonuçlandı."/>
+		<text name="fl_disclaimer_line_one" text="* Ödemeler otomatik olarak tahsil edilir ve borçlu durumuna düşürebilir."/>
+		<text name="fl_disclaimer_line_two" text="** Taksit anlaşması tamamlanmadan önce ürünü satarsanız, ödenmemiş tutarın tamamını ödersiniz."/>
+		<text name="fl_disclaimer_line_three" text="*** Depozito hemen alınacaktır. Aylık ödemeler gelecek ay başlayacaktır. Son ücret, son aylık ödemeden sonraki ay ödenecektir."/>
+		<text name="fl_btn_settle_early" text="Erken ödeme"/>
+		<text name="fl_header_remaining_cost" text="Kalan Maliyet"/>
+		<text name="fl_header_current_deals" text="Mevcut anlaşmalar"/>
+		<text name="fl_header_hire_purchasing" text="Taksit"/>
+		<text name="fl_header_item_name" text="Eşya"/>
+		<text name="fl_not_enough_money_settlement" text="Bu anlaşmayı yapmak için yeterli paranız yok."/>
+		<text name="fl_deal_not_found" text="Anlaşma bulunamadı. Belki de çoktan halledilmiş olabilir."/>
+		<text name="fl_confirm_settle_early" text="Ödeme yapmak istediğinizden emin misiniz? Hesabınızdan %s tutarı hemen düşülecektir."/>
+		<text name="fl_settle_early_complete" text="Taksitli satın alma işlemini tamamladınız ve artık eşyanın mülkiyeti tamamen sizde."/>
+	</texts>
+</l10n>
