@@ -64,6 +64,26 @@ function MenuFinanceList:updateContent()
         self.noDataContainer:setVisible(true)
         return
     end
+
+    -- insert dummy record where we can display totals
+    local totalMonthlyCost = 0
+    local totalSettlement = 0
+    local totalRemainingCost = 0
+    local totalFinalFee = 0
+    for _, deal in ipairs(self.currentDeals) do
+        totalMonthlyCost = totalMonthlyCost + deal:getMonthlyPayment()
+        totalSettlement = totalSettlement + deal:getSettlementCost()
+        totalRemainingCost = totalRemainingCost + deal:getRemainingCost()
+        totalFinalFee = totalFinalFee + deal.finalFee
+    end
+    table.insert(self.currentDeals, {
+        item_name = "TOTAL",
+        monthly_cost = totalMonthlyCost,
+        final_fee = totalFinalFee,
+        remaining_cost = totalRemainingCost,
+        settlement_cost = totalSettlement
+    })
+
     self.tableContainer:setVisible(true)
     self.noDataContainer:setVisible(false)
     self.currentDealsTable:reloadData()
@@ -82,6 +102,21 @@ function MenuFinanceList:getTitleForSectionHeader(list, section)
 end
 
 function MenuFinanceList:populateCellForItemInSection(list, section, index, cell)
+    
+    if index == #self.currentDeals then
+        local totals = self.currentDeals[index]
+        -- This is the dummy record for totals
+        cell:getAttribute("item_name"):setText(g_i18n:getText("ui_total"))
+        cell:getAttribute("monthly_cost"):setText(g_i18n:formatMoney(totals.monthly_cost, 0, true, true))
+        cell:getAttribute("interest"):setText("")
+        cell:getAttribute("remaining_months"):setText("")
+        cell:getAttribute("final_fee"):setText(g_i18n:formatMoney(totals.final_fee, 0, true, true))
+        cell:getAttribute("remaining_cost"):setText(g_i18n:formatMoney(totals.remaining_cost, 0, true, true))
+        cell:getAttribute("settlement_cost"):setText(g_i18n:formatMoney(totals.settlement_cost, 0, true, true))
+        return
+    end
+
+
     local deal = self.currentDeals[index]
     cell:getAttribute("item_name"):setText(deal:getVehicle():getName())
     cell:getAttribute("monthly_cost"):setText(g_i18n:formatMoney(deal:getMonthlyPayment(), 0, true, true))
@@ -132,5 +167,5 @@ function MenuFinanceList:settleEarly()
             end
         end, self,
         string.format(g_i18n:getText("fl_confirm_settle_early"),
-        g_i18n:formatMoney(deal:getSettlementCost(), 0, true, true)))
+            g_i18n:formatMoney(deal:getSettlementCost(), 0, true, true)))
 end

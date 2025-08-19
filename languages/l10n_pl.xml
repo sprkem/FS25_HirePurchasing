@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <l10n>
-	<translationContributors>[_Mario_]<translationContributors/>
+	<translationContributors>[_Mario_]</translationContributors>
 	<texts>
 		<text name="fl_btn_finance" text="ZAKUP RATALNY"/>
 		<text name="fl_new_finance_title" text="Nowa umowa zakupu ratalnego"/>
@@ -10,12 +10,12 @@
 		<text name="fl_option_two" text="Opcja druga"/>
 		<text name="fl_option_three" text="Opcja trzecia"/>
 		<text name="fl_option_four" text="Opcja czwarta"/>
-		<text name="fl_header_monthly" text="Koszt miesięczny"/>
-		<text name="fl_header_final_fee" text="Opłata końcowa"/>
-		<text name="fl_header_total_cost" text="Całkowity koszt"/>
-		<text name="fl_header_interest" text="Stopa procentowa"/>
+		<text name="fl_header_monthly" text="Odsetki"/>
+		<text name="fl_header_final_fee" text="Wykup"/>
+		<text name="fl_header_total_cost" text="Całkowity koszt zakupu"/>
+		<text name="fl_header_interest" text="Procent"/>
 		<text name="fl_header_settlement_cost" text="Opłata likwidacyjna"/>
-		<text name="fl_header_months_left" text="Pozostałe miesiące"/>
+		<text name="fl_header_months_left" text="Pozostałe raty"/>
 		<text name="fl_choose_option" text="Wybierz opcję zakupu"/>
 		<text name="fl_not_enough_money_deposit" text="Aby kupić ten przedmiot na raty, musisz wpłacić depozyt w wysokości co najmniej %s."/>
 		<text name="fl_deal_complete" text="Twoja umowa zakupu ratalnego na %s została zakończona."/>

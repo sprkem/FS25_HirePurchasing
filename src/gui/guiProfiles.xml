@@ -23,7 +23,7 @@
         <imageSliceId value="gui.icon_ingameMenu_contracts" />
         <imageColor value="$preset_fs25_colorMainDark" />
     </Profile>
-    <Profile name="fl_CurrentDealsText" extends="fs25_statisticsHeaderText" with="anchorTopLeft" />
+    <Profile name="fl_CurrentDealsText" extends="fs25_statisticsHeaderText" with="anchorTopLeft" />    
     <Profile name="fl_Header" extends="baseReference">
         <imageColor value="0 0 0 0" />
         <textFocusedColor value="$preset_fs25_colorMainHighlight" />

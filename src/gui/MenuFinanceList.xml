@@ -40,6 +40,8 @@
             <ThreePartBitmap profile="fl_SliderBox" position="28px -80px" size="6px 670px">
                 <Slider profile="fs25_listSlider" dataElementId="currentDealsTable" />
             </ThreePartBitmap>
+
+            
         </GuiElement>
 
         <GuiElement id="noDataContainer">
