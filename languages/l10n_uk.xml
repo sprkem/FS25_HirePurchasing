@@ -10,7 +10,7 @@
 		<text name="fl_option_two" text="Опція друга"/>
 		<text name="fl_option_three" text="Опція третя"/>
 		<text name="fl_option_four" text="Опція четверта"/>
-		<text name="fl_header_monthly" text="Міс. платіж"/>
+		<text name="fl_header_monthly" text="Mic. платіж"/>
 		<text name="fl_header_final_fee" text="Кінц. платіж"/>
 		<text name="fl_header_total_cost" text="Загальна вартість"/>
 		<text name="fl_header_interest" text="% ставка"/>
@@ -20,7 +20,7 @@
 		<text name="fl_not_enough_money_deposit" text="Вам потрібно внести щонайменше %s, щоб оформити оренду з правом викупу цього предмета."/>
 		<text name="fl_deal_complete" text="Ваша угода про оренду з правом викупу для %s завершена."/>
 		<text name="fl_deal_complete_early" text="Ваша угода про купівлю в розстрочку була закрита, оскільки ви продали транспортний засіб."/>
-		<text name="fl_disclaimer_line_one" text="* Платежі будуть стягуватися автоматично і можуть призвести до заборгованості."/>
+		<text name="fl_disclaimer_line_one" text="* Платежі будуть стягуватися автоматично i можуть призвести до заборгованості."/>
 		<text name="fl_disclaimer_line_two" text="** Якщо ви продасте предмет до завершення угоди про оренду з правом викупу, ви сплатите всю залишкову суму."/>
 		<text name="fl_disclaimer_line_three" text="*** Завдаток стягується одразу, щомісячні платежі — з наступного місяця, кінцева плата — через місяць після останнього платежу."/>
 		<text name="fl_btn_settle_early" text="Закрити раніше"/>
@@ -28,9 +28,9 @@
 		<text name="fl_header_current_deals" text="Поточні угоди"/>
 		<text name="fl_header_hire_purchasing" text="Оренда з правом викупу"/>
 		<text name="fl_header_item_name" text="Предмет"/>
-		<text name="fl_not_enough_money_settlement" text="У вас недостатньо грошей, щоб закрити цю угоду."/>
+		<text name="fl_not_enough_money_settlement" text="y вас недостатньо грошей, щоб закрити цю угоду."/>
 		<text name="fl_deal_not_found" text="Угоду не знайдено. Можливо, вона вже була закрита."/>
 		<text name="fl_confirm_settle_early" text="Ви впевнені, що хочете закрити угоду? %s буде негайно знято з вашого рахунку."/>
-		<text name="fl_settle_early_complete" text="Ви закрили угоду про оренду з правом викупу і тепер повністю володієте предметом."/>
+		<text name="fl_settle_early_complete" text="Ви закрили угоду про оренду з правом викупу i тепер повністю володієте предметом."/>
 	</texts>
 </l10n>
