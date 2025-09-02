@@ -144,6 +144,7 @@ Journal des modifications:
         <sourceFile filename="src/events/InitialClientStateEvent.lua"/>
         <sourceFile filename="src/events/NewLeaseDealEvent.lua"/>
         <sourceFile filename="src/events/ObjectIdChangedEvent.lua"/>
+        <sourceFile filename="src/events/SettleEarlyEvent.lua"/>
     </extraSourceFiles>
     <multiplayer supported="true"/>
     <l10n filenamePrefix="languages/l10n" />

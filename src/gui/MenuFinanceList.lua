@@ -102,7 +102,6 @@ function MenuFinanceList:getTitleForSectionHeader(list, section)
 end
 
 function MenuFinanceList:populateCellForItemInSection(list, section, index, cell)
-    
     if index == #self.currentDeals then
         local totals = self.currentDeals[index]
         -- This is the dummy record for totals
@@ -132,6 +131,10 @@ function MenuFinanceList:onListSelectionChanged(list, section, index)
 end
 
 function MenuFinanceList:settleEarly()
+    if self.selectedIndex == #self.currentDeals then
+        return
+    end
+
     local deal = self.currentDeals[self.selectedIndex]
     if deal == nil then
         return
@@ -151,7 +154,6 @@ function MenuFinanceList:settleEarly()
                 for i, d in ipairs(leaseDeals) do
                     if d == deal then
                         found = true
-                        table.remove(leaseDeals, i)
                         break
                     end
                 end
@@ -161,7 +163,8 @@ function MenuFinanceList:settleEarly()
                     return
                 end
 
-                deal:paySettlemenCost()
+                g_client:getServerConnection():sendEvent(SettleEarlyEvent.new(deal.id))
+
                 InfoDialog.show(g_i18n:getText("fl_settle_early_complete"))
                 self:updateContent()
             end

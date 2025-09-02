@@ -28,6 +28,14 @@ function LeasingOptions:makeCheckEnabledPredicate()
     return function() return true end
 end
 
+function LeasingOptions:generateId()
+    local template = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
+    return (string.gsub(template, '[xy]', function(c)
+        local v = (c == 'x') and math.random(0, 0xf) or math.random(8, 0xb)
+        return string.format('%x', v)
+    end))
+end
+
 -- When customised the object id can change. In a mp scenario we need clients to be notified of the new id
 function LeasingOptions:checkObjectIds()
     if (not g_currentMission:getIsServer()) then return end
@@ -131,7 +139,7 @@ function LeasingOptions.onVehicleSellEvent()
         local removed = {}
         for i, deal in ipairs(leaseDeals) do
             if deal:getVehicle() == nil then
-                deal:paySettlemenCost()
+                deal:paySettlementCost()
                 g_currentMission:addIngameNotification(FSBaseMission.INGAME_NOTIFICATION_CRITICAL,
                     g_i18n:getText("fl_deal_complete_early"))
                 table.insert(removed, i)
