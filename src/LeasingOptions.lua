@@ -136,18 +136,10 @@ function LeasingOptions.onVehicleSellEvent()
     local timer = Timer.new(2000)
     timer:setFinishCallback(function()
         local leaseDeals = g_currentMission.LeasingOptions.leaseDeals
-        local removed = {}
         for i, deal in ipairs(leaseDeals) do
             if deal:getVehicle() == nil then
-                deal:paySettlementCost()
-                g_currentMission:addIngameNotification(FSBaseMission.INGAME_NOTIFICATION_CRITICAL,
-                    g_i18n:getText("fl_deal_complete_early"))
-                table.insert(removed, i)
+                g_client:getServerConnection():sendEvent(SettleEarlyEvent.new(deal.id))
             end
-        end
-
-        for _, index in pairs(removed) do
-            table.remove(leaseDeals, index)
         end
         timer:stop()
     end)
