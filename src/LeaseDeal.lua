@@ -16,6 +16,7 @@ function LeaseDeal.new(dealType, baseCost, deposit, durationMonths, finalFee, mo
     local self = {}
     setmetatable(self, LeaseDeal_mt)
 
+    self.id = g_currentMission.LeasingOptions:generateId()
     self.dealType = dealType
     self.baseCost = baseCost
     self.deposit = deposit
@@ -159,7 +160,9 @@ function LeaseDeal:getSettlementCost()
     return (self:getMonthlyAmountForSettlement() * remainingMonths) + self.finalFee
 end
 
-function LeaseDeal:paySettlemenCost()
+-- Should only be called on the server by the SettleEarlyEvent
+function LeaseDeal:paySettlementCost()
+    if (not g_currentMission:getIsServer()) then return end
     local settlementCost = self:getSettlementCost()
     local farm = g_farmManager:getFarmById(self.farmId)
 
@@ -168,6 +171,7 @@ function LeaseDeal:paySettlemenCost()
 end
 
 function LeaseDeal:writeStream(streamId, connection)
+    streamWriteString(streamId, self.id)
     streamWriteInt32(streamId, self.dealType)
     streamWriteInt32(streamId, self.baseCost)
     streamWriteInt32(streamId, self.deposit)
@@ -180,6 +184,7 @@ function LeaseDeal:writeStream(streamId, connection)
 end
 
 function LeaseDeal:readStream(streamId, connection)
+    self.id = streamReadString(streamId)
     self.dealType = streamReadInt32(streamId)
     self.baseCost = streamReadInt32(streamId)
     self.deposit = streamReadInt32(streamId)
@@ -192,6 +197,7 @@ function LeaseDeal:readStream(streamId, connection)
 end
 
 function LeaseDeal:saveToXmlFile(xmlFile, key)
+    setXMLString(xmlFile, key .. "#id", self.id)
     setXMLInt(xmlFile, key .. "#dealType", self.dealType)
     setXMLInt(xmlFile, key .. "#baseCost", self.baseCost)
     setXMLInt(xmlFile, key .. "#deposit", self.deposit)
@@ -203,6 +209,7 @@ function LeaseDeal:saveToXmlFile(xmlFile, key)
 end
 
 function LeaseDeal:loadFromXMLFile(xmlFile, key)
+    self.id = getXMLString(xmlFile, key .. "#id") or g_currentMission.LeasingOptions:generateId()
     self.dealType = getXMLInt(xmlFile, key .. "#dealType")
     self.baseCost = getXMLInt(xmlFile, key .. "#baseCost")
     self.deposit = getXMLInt(xmlFile, key .. "#deposit")

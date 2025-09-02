@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="100">
     <author>Ozz</author>
-    <version>1.0.0.6</version>
+    <version>1.0.0.7</version>
     <iconFilename>icon_HirePurchasing.dds</iconFilename>
     <title>
         <en>Hire Purchasing</en>
@@ -21,6 +21,9 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Changelog:
+
+1.0.0.7:
+- Fix a multiplayer bug when settling a lease early in multiplayer
 
 1.0.0.6
 - Add totals to hire purchasing menu
@@ -64,6 +67,9 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Änderungsliste:
 
+1.0.0.7:
+- Behebung eines Multiplayer-Fehlers bei der vorzeitigen Abrechnung eines Mietvertrags im Multiplayer
+
 1.0.0.6
 - Summen zum Mietkaufmenü hinzufügen
 - Ukrainische Übersetzung hinzugefügt, dank Hunt3RSH
@@ -105,6 +111,9 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Journal des modifications:
 
+1.0.0.7:
+- Correction d'un bug multijoueur lors de la signature d'un bail en début de partie.
+
 1.0.0.6
 - Ajout des totaux au menu de location-vente
 - Ajout de la traduction ukrainienne, grâce à Hunt3RSH
@@ -144,6 +153,7 @@ Journal des modifications:
         <sourceFile filename="src/events/InitialClientStateEvent.lua"/>
         <sourceFile filename="src/events/NewLeaseDealEvent.lua"/>
         <sourceFile filename="src/events/ObjectIdChangedEvent.lua"/>
+        <sourceFile filename="src/events/SettleEarlyEvent.lua"/>
     </extraSourceFiles>
     <multiplayer supported="true"/>
     <l10n filenamePrefix="languages/l10n" />
