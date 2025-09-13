@@ -76,6 +76,20 @@ function LeaseDeal:getObjectId()
     return self.objectId
 end
 
+function LeaseDeal:getUniqueId()
+    if self.vehicle and self.vehicle ~= "" then
+        return self.vehicle
+    end
+
+    local object = NetworkUtil.getObject(self:getObjectId())
+    if object and object.uniqueId then
+        self.vehicle = object.uniqueId
+        return self.vehicle
+    end
+    print("Warning: LeaseDeal:getUniqueId() could not find a uniqueId for objectId " .. tostring(self.objectId))
+    return nil
+end
+
 function LeaseDeal:getVehicle()
     local getMethod = LeaseDeal.GET_VEHICLE_METHOD.OBJECT_ID
     if g_currentMission:getIsServer() then
@@ -204,7 +218,7 @@ function LeaseDeal:saveToXmlFile(xmlFile, key)
     setXMLInt(xmlFile, key .. "#durationMonths", self.durationMonths)
     setXMLInt(xmlFile, key .. "#finalFee", self.finalFee)
     setXMLInt(xmlFile, key .. "#monthsPaid", self.monthsPaid)
-    setXMLString(xmlFile, key .. "#vehicle", NetworkUtil.getObject(self:getObjectId()).uniqueId)
+    setXMLString(xmlFile, key .. "#vehicle", self:getUniqueId() or "")
     setXMLInt(xmlFile, key .. "#farmId", self.farmId)
 end
 

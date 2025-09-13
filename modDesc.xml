@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="100">
     <author>Ozz</author>
-    <version>1.0.0.7</version>
+    <version>1.0.0.8</version>
     <iconFilename>icon_HirePurchasing.dds</iconFilename>
     <title>
         <en>Hire Purchasing</en>
@@ -21,6 +21,10 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Changelog:
+
+1.0.0.8:
+- Refreshes lease list screen when money changes, e.g. when a lease is settled.
+- Improvement to lease deal save logic
 
 1.0.0.7:
 - Fix a multiplayer bug when settling a lease early in multiplayer
@@ -67,6 +71,10 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Änderungsliste:
 
+1.0.0.8:
+- Aktualisiert die Leasingliste bei Geldänderungen, z. B. bei Abschluss eines Leasingvertrags.
+- Verbesserte Logik zum Speichern von Leasingverträgen
+
 1.0.0.7:
 - Behebung eines Multiplayer-Fehlers bei der vorzeitigen Abrechnung eines Mietvertrags im Multiplayer
 
@@ -110,6 +118,10 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Journal des modifications:
+
+1.0.0.8:
+- Actualisation de la liste des baux en cas de changement de prix, par exemple lors de la clôture d'un bail.
+- Amélioration de la logique de sauvegarde des contrats de location.
 
 1.0.0.7:
 - Correction d'un bug multijoueur lors de la signature d'un bail en début de partie.

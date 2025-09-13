@@ -40,12 +40,31 @@ end
 
 function MenuFinanceList:onFrameOpen()
     MenuFinanceList:superClass().onFrameOpen(self)
+    g_messageCenter:subscribe(MessageType.MONEY_CHANGED, self.onMoneyChange, self)
 
     self:updateContent()
 end
 
 function MenuFinanceList:onFrameClose()
     MenuFinanceList:superClass().onFrameClose(self)
+    g_messageCenter:unsubscribeAll(self)
+end
+
+function MenuFinanceList:onMoneyChange()
+	if g_localPlayer ~= nil then
+		local farm = g_farmManager:getFarmById(g_localPlayer.farmId)
+		if farm.money <= -1 then
+			self.currentBalanceText:applyProfile(ShopMenu.GUI_PROFILE.SHOP_MONEY_NEGATIVE, nil, true)
+		else
+			self.currentBalanceText:applyProfile(ShopMenu.GUI_PROFILE.SHOP_MONEY, nil, true)
+		end
+		local moneyText = g_i18n:formatMoney(farm.money, 0, true, false)
+		self.currentBalanceText:setText(moneyText)
+		if self.shopMoneyBox ~= nil then
+			self.shopMoneyBox:invalidateLayout()
+			self.shopMoneyBoxBg:setSize(self.shopMoneyBox.flowSizes[1] + 60 * g_pixelSizeScaledX)
+		end
+	end
 end
 
 function MenuFinanceList:updateContent()
