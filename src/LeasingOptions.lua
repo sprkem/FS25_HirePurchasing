@@ -117,8 +117,9 @@ function LeasingOptions.periodChanged()
         if ended then table.insert(completedDeals, i) end
     end
 
-    for _, index in pairs(completedDeals) do
-        leaseDeals[index] = nil
+    table.sort(completedDeals, function(a, b) return a > b end)
+    for _, index in ipairs(completedDeals) do
+        table.remove(leaseDeals, index)
     end
 end
 

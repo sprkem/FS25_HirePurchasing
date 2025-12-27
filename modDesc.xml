@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="101">
     <author>Ozz</author>
-    <version>1.0.0.8</version>
+    <version>1.0.0.9</version>
     <iconFilename>icon_HirePurchasing.dds</iconFilename>
     <title>
         <en>Hire Purchasing</en>
@@ -21,6 +21,9 @@ A mod that adds an option to purchase equipment through a hire purchase model.
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Changelog:
+
+1.0.0.9:
+- Fix an issue where upon completion of a hire purchase, other deals would pause repayments until a restart.
 
 1.0.0.8:
 - Refreshes lease list screen when money changes, e.g. when a lease is settled.
@@ -71,6 +74,9 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Änderungsliste:
 
+1.0.0.9:
+- Es sollte ein Problem behoben werden, bei dem nach Abschluss eines Mietkaufs andere Mietverträge bis zu einer Wiederaufnahme der Rückzahlungen pausiert wurden.
+
 1.0.0.8:
 - Aktualisiert die Leasingliste bei Geldänderungen, z. B. bei Abschluss eines Leasingvertrags.
 - Verbesserte Logik zum Speichern von Leasingverträgen
@@ -118,6 +124,9 @@ Un mod qui ajoute une option d'achat d'équipement via un modèle de location-ve
 Github: https://github.com/sprkem/FS25_HirePurchasing
 
 Journal des modifications:
+
+1.0.0.9:
+- Correction d'un problème où, à l'issue d'un contrat de location-vente, les remboursements d'autres contrats étaient suspendus jusqu'à un redémarrage.
 
 1.0.0.8:
 - Actualisation de la liste des baux en cas de changement de prix, par exemple lors de la clôture d'un bail.
