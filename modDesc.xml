@@ -23,7 +23,7 @@ Github: https://github.com/sprkem/FS25_HirePurchasing
 Changelog:
 
 1.0.0.10 [WIP]:
-- Added Nordic translations, thanks to McBurning.
+- Added Nordic translations, thanks to IbizaPolar.
 
 1.0.0.9:
 - Fix an issue where upon completion of a hire purchase, other deals would pause repayments until a restart.
